@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RUHAIM RIYAZ | Visuals by Ruhaim - Photographer & Graphic Designer</title>
+  <meta name="description" content="Official Portfolio of Ruhaim Riyaz - Photographer, Graphic Designer & Visual Storyteller based in Sri Lanka.">
+  <meta name="author" content="Ruhaim Riyaz">
+  
+  <!-- Google Fonts for Minimalist Graphic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- GSAP Animation Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+
+  <!-- WebGL Dynamic 3D Abstract Parallax Background Canvas -->
+  <canvas id="webgl-canvas"></canvas>
+
+  <!-- Custom Trailing Pointer Cursors -->
+  <div class="custom-cursor" id="cursor"></div>
+  <div class="custom-cursor-follower" id="cursor-follower"></div>
+
+  <!-- Main Website Content Container -->
+  <div class="main-wrapper" id="main-wrapper">
+
+    <!-- Header & Navigation -->
+    <header class="navbar">
+      <a href="#hero" class="navbar-brand">
+        <div class="brand-symbol">
+          <img src="assets/Logo/Ruhaim%20Riyaz%20Watermark%20II.png" alt="Ruhaim Riyaz Logo">
+        </div>
+        <div class="brand-text-block">
+          <span class="brand-name">RUHAIM RIYAZ</span>
+          <span class="brand-handle">Visuals by Ruhaim</span>
+        </div>
+      </a>
+      
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation Menu">
+        <i data-lucide="menu" class="icon-menu"></i>
+        <i data-lucide="x" class="icon-close"></i>
+      </button>
+
+      <nav class="nav-container" id="nav-container">
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#photography" class="nav-link">Photography</a></li>
+          <li><a href="#graphic-design" class="nav-link">Graphic Design</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#reviews" class="nav-link">Reviews</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- Hero Section with Central Logo & Tagline -->
+      <section class="hero-section" id="hero">
+        <div class="hero-graphic-bg-grid"></div>
+        <div class="hero-content">
+          <div class="hero-tag-badge">
+            <span class="pulse-dot"></span>
+            <span>Visuals by Ruhaim</span>
+          </div>
+
+          <!-- Ruhaim Riyaz Logo Image Replacement -->
+          <div class="hero-logo-wrapper">
+            <img src="assets/Logo/Ruhaim%20Riyaz%20Watermark%20II.png" alt="Ruhaim Riyaz Logo Watermark" class="hero-logo-img">
+          </div>
+
+          <!-- Tagline directly below Logo -->
+          <p class="hero-tagline monochrome-gradient-text">
+            Photographer • Graphic Designer • Visual Storyteller
+          </p>
+
+          <div class="hero-actions">
+            <a href="#photography" class="btn-mono-primary">
+              <span>PHOTOGRAPHY GALLERY</span>
+              <i data-lucide="camera"></i>
+            </a>
+            <a href="#graphic-design" class="btn-mono-outline">
+              <span>GRAPHIC DESIGN STUDIO</span>
+              <i data-lucide="layout-grid"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- SECTION 1: SEPARATE PHOTOGRAPHY GALLERY (WITHOUT TITLES) -->
+      <!-- =================================================================== -->
+      <section class="section-container" id="photography">
+        <div class="section-header">
+          <span class="section-tag">// GALLERY 01</span>
+          <h2 class="section-title monochrome-gradient-text">PHOTOGRAPHY ARCHIVE</h2>
+          <p class="section-subtitle">Photographed by Ruhaim Riyaz (Instagram: Visuals by Ruhaim) - Event Photography, Creative Visual Content & Storytelling.</p>
+        </div>
+
+        <!-- Filter Tab Buttons for Photography -->
+        <div class="portfolio-tab-nav" id="photo-tab-nav">
+          <button class="tab-btn active" data-filter="all">All Photography</button>
+          <button class="tab-btn" data-filter="weddings">Weddings & Macro</button>
+          <button class="tab-btn" data-filter="cultural">Cultural Motion</button>
+          <button class="tab-btn" data-filter="sports">Sports Action</button>
+          <button class="tab-btn" data-filter="landscapes">Landscapes</button>
+        </div>
+
+        <!-- Photography Cards Grid -->
+        <div class="portfolio-grid" id="photography-grid">
+          
+          <!-- Photo 1 -->
+          <div class="portfolio-card photo-card" data-category="weddings" data-desc="High luxury bridal detail photography showcasing intricate henna hand art, traditional gold jewelry, and embroidered ivory attire." data-image="assets/Photographs/IMG_2184.jpg" data-photographer="Ruhaim Riyaz">
+            <div class="card-media-wrapper">
+              <img src="assets/Photographs/IMG_2184.jpg" alt="Photographed by Ruhaim Riyaz">
+            </div>
+            <div class="card-content-overlay">
+              <span class="card-category-badge">WEDDINGS | MACRO DETAIL</span>
+              <p class="card-credit-line">Photographed by Ruhaim Riyaz</p>
+            </div>
+          </div>
+
+          <!-- Photo 2 -->
+          <div class="portfolio-card photo-card" data-category="landscapes" data-desc="Fiery sunset ocean seascape over rolling waves and cloudscape." data-image="assets/Photographs/IMG_2180.jpg" data-photographer="Ruhaim Riyaz">
+            <div class="card-media-wrapper">
+              <img src="assets/Photographs/IMG_2180.jpg" alt="Photographed by Ruhaim Riyaz">
+            </div>
+            <div class="card-content-overlay">
+              <span class="card-category-badge">LANDSCAPE | SEASCAPE</span>
+              <p class="card-credit-line">Photographed by Ruhaim Riyaz</p>
+            </div>
+          </div>
+
+          <!-- Photo 3 -->
+          <div class="portfolio-card photo-card" data-category="landscapes" data-desc="Dusk silhouette of beachside ice cream vendor against violet and orange evening sky." data-image="assets/Photographs/IMG_2181.jpg" data-photographer="Ruhaim Riyaz">
+            <div class="card-media-wrapper">
+              <img src="assets/Photographs/IMG_2181.jpg" alt="Photographed by Ruhaim Riyaz">
+            </div>
+            <div class="card-content-overlay">
+              <span class="card-category-badge">LANDSCAPE | SILHOUETTE</span>
+              <p class="card-credit-line">Photographed by Ruhaim Riyaz</p>
+            </div>
+          </div>
+
+          <!-- Photo 4 -->
+          <div class="portfolio-card photo-card" data-category="cultural" data-desc="Dynamic motion blur of traditional soloist dancer performance near stone pillar." data-image="assets/Photographs/IMG_2182.jpg" data-photographer="Ruhaim Riyaz">
+            <div class="card-media-wrapper">
+              <img src="assets/Photographs/IMG_2182.jpg" alt="Photographed by Ruhaim Riyaz">
+            </div>
+            <div class="card-content-overlay">
+              <span class="card-category-badge">CULTURAL | PERFORMANCE ART</span>
+              <p class="card-credit-line">Photographed by Ruhaim Riyaz</p>
+            </div>
+          </div>
+
+          <!-- Photo 5 -->
+          <div class="portfolio-card photo-card" data-category="cultural" data-desc="Ethereal long exposure light trails of traditional dancers in motion." data-image="assets/Photographs/IMG_2183.jpg" data-photographer="Ruhaim Riyaz">
+            <div class="card-media-wrapper">
+              <img src="assets/Photographs/IMG_2183.jpg" alt="Photographed by Ruhaim Riyaz">
+            </div>
+            <div class="card-content-overlay">
+              <span class="card-category-badge">CULTURAL | LIGHT TRAILS</span>
+              <p class="card-credit-line">Photographed by Ruhaim Riyaz</p>
+            </div>
+          </div>
+
+          <!-- Photo 6 -->
+          <div class="portfolio-card photo-card" data-category="cultural" data-desc="Monochrome fine art portrait." data-image="assets/Photographs/IMG_2185.jpg" data-photographer="Ruhaim Riyaz">
+            <div class="card-media-wrapper">
+              <img src="assets/Photographs/IMG_2185.jpg" alt="Photographed by Ruhaim Riyaz">
+            </div>
+            <div class="card-content-overlay">
+              <span class="card-category-badge">FINE ART | PORTRAIT</span>
+              <p class="card-credit-line">Photographed by Ruhaim Riyaz</p>
+            </div>
+          </div>
+
+          <!-- Photo 7 -->
+          <div class="portfolio-card photo-card" data-category="cultural" data-desc="Atmospheric fine art photography highlighting depth and shadow." data-image="assets/Photographs/IMG_2186.jpg" data-photographer="Ruhaim Riyaz">
+            <div class="card-media-wrapper">
+              <img src="assets/Photographs/IMG_2186.jpg" alt="Photographed by Ruhaim Riyaz">
+            </div>
+            <div class="card-content-overlay">
+              <span class="card-category-badge">FINE ART | LIGHTING</span>
+              <p class="card-credit-line">Photographed by Ruhaim Riyaz</p>
+            </div>
+          </div>
+
+          <!-- Photo 8 -->
+          <div class="portfolio-card photo-card" data-category="sports" data-desc="High speed sports and action photo capturing focus." data-image="assets/Photographs/IMG_2187.jpg" data-photographer="Ruhaim Riyaz">
+            <div class="card-media-wrapper">
+              <img src="assets/Photographs/IMG_2187.jpg" alt="Photographed by Ruhaim Riyaz">
+            </div>
+            <div class="card-content-overlay">
+              <span class="card-category-badge">SPORTS | ACTION FOCUS</span>
+              <p class="card-credit-line">Photographed by Ruhaim Riyaz</p>
+            </div>
+          </div>
+
+          <!-- Photo 9 -->
+          <div class="portfolio-card photo-card" data-category="sports" data-desc="Official Isipathana rugby sports coverage." data-image="assets/Photographs/IMG_2188.jpg" data-photographer="Ruhaim Riyaz">
+            <div class="card-media-wrapper">
+              <img src="assets/Photographs/IMG_2188.jpg" alt="Photographed by Ruhaim Riyaz">
+            </div>
+            <div class="card-content-overlay">
+              <span class="card-category-badge">SPORTS | ISIPATHANA RUGBY</span>
+              <p class="card-credit-line">Photographed by Ruhaim Riyaz</p>
+            </div>
+          </div>
+
+          <!-- Photo 10 -->
+          <div class="portfolio-card photo-card" data-category="cultural" data-desc="Cultural heritage performance art document." data-image="assets/Photographs/IMG_2189.jpg" data-photographer="Ruhaim Riyaz">
+            <div class="card-media-wrapper">
+              <img src="assets/Photographs/IMG_2189.jpg" alt="Photographed by Ruhaim Riyaz">
+            </div>
+            <div class="card-content-overlay">
+              <span class="card-category-badge">CULTURAL | HERITAGE</span>
+              <p class="card-credit-line">Photographed by Ruhaim Riyaz</p>
+            </div>
+          </div>
+
+          <!-- Photo 11 -->
+          <div class="portfolio-card photo-card" data-category="weddings" data-desc="Fine detail macro capture of luxury attire texture and embroidery." data-image="assets/Photographs/IMG_2190.jpg" data-photographer="Ruhaim Riyaz">
+            <div class="card-media-wrapper">
+              <img src="assets/Photographs/IMG_2190.jpg" alt="Photographed by Ruhaim Riyaz">
+            </div>
+            <div class="card-content-overlay">
+              <span class="card-category-badge">WEDDINGS | MACRO ELEGANCE</span>
+              <p class="card-credit-line">Photographed by Ruhaim Riyaz</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- SECTION 2: SEPARATE GRAPHIC DESIGN STUDIO (WITHOUT TITLES) -->
+      <!-- =================================================================== -->
+      <section class="section-container" id="graphic-design">
+        <div class="section-header">
+          <span class="section-tag">// GALLERY 02</span>
+          <h2 class="section-title monochrome-gradient-text">GRAPHIC DESIGN STUDIO</h2>
+          <p class="section-subtitle">Created by Ruhaim Riyaz - Custom Event Posters, Branding Systems & Meaningful Designs.</p>
+        </div>
+
+        <!-- Filter Tab Buttons for Graphic Design -->
+        <div class="portfolio-tab-nav" id="graphic-tab-nav">
+          <button class="tab-btn active" data-filter="all">All Graphic Works</button>
+          <button class="tab-btn" data-filter="posters">Event Posters</button>
+          <button class="tab-btn" data-filter="campaigns">Marketing Campaigns</button>
+          <button class="tab-btn" data-filter="branding">Branding & Albums</button>
+        </div>
+
+        <!-- Graphic Design Cards Grid -->
+        <div class="portfolio-grid" id="graphic-grid">
+          
+          <!-- Graphic Item 1 -->
+          <div class="portfolio-card graphic-card" data-category="posters" data-desc="Official sports and event poster artwork created for Isipathana College." data-image="assets/Graphic%20designs/Isipathana_Ruhaim_Dematagoda.jpg" data-designer="Ruhaim Riyaz">
+            <div class="card-media-wrapper">
+              <img src="assets/Graphic%20designs/Isipathana_Ruhaim_Dematagoda.jpg" alt="Designed by Ruhaim Riyaz">
+            </div>
+            <div class="card-content-overlay">
+              <span class="card-category-badge">GRAPHIC DESIGN | SPORTS POSTER</span>
+              <p class="card-credit-line">Designed by Ruhaim Riyaz</p>
+            </div>
+          </div>
+
+          <!-- Graphic Item 2 -->
+          <div class="portfolio-card graphic-card" data-category="campaigns" data-desc="Event banner and graphic identity poster designed for Green Walk 2025." data-image="assets/Graphic%20designs/Green%20Walk%202025.jpg" data-designer="Ruhaim Riyaz">
+            <div class="card-media-wrapper">
+              <img src="assets/Graphic%20designs/Green%20Walk%202025.jpg" alt="Designed by Ruhaim Riyaz">
+            </div>
+            <div class="card-content-overlay">
+              <span class="card-category-badge">GRAPHIC DESIGN | EVENT CAMPAIGN</span>
+              <p class="card-credit-line">Designed by Ruhaim Riyaz</p>
+            </div>
+          </div>
+
+          <!-- Graphic Item 3 -->
+          <div class="portfolio-card graphic-card" data-category="branding" data-desc="Album launch cover art and promo poster design for Nethinethra '23." data-image="assets/Graphic%20designs/Nethinethra%2023%20Album%20Out%20Poster.jpg" data-designer="Ruhaim Riyaz">
+            <div class="card-media-wrapper">
+              <img src="assets/Graphic%20designs/Nethinethra%2023%20Album%20Out%20Poster.jpg" alt="Designed by Ruhaim Riyaz">
+            </div>
+            <div class="card-content-overlay">
+              <span class="card-category-badge">GRAPHIC DESIGN | ALBUM COVER</span>
+              <p class="card-credit-line">Designed by Ruhaim Riyaz</p>
+            </div>
+          </div>
+
+          <!-- Graphic Item 4 -->
+          <div class="portfolio-card graphic-card" data-category="campaigns" data-desc="Futuristic teaser poster artwork for OMG product campaign." data-image="assets/Graphic%20designs/OMG%20Coming%20Soon%20Final.jpg" data-designer="Ruhaim Riyaz">
+            <div class="card-media-wrapper">
+              <img src="assets/Graphic%20designs/OMG%20Coming%20Soon%20Final.jpg" alt="Designed by Ruhaim Riyaz">
+            </div>
+            <div class="card-content-overlay">
+              <span class="card-category-badge">GRAPHIC DESIGN | TEASER POSTER</span>
+              <p class="card-credit-line">Designed by Ruhaim Riyaz</p>
+            </div>
+          </div>
+
+          <!-- Graphic Item 5 -->
+          <div class="portfolio-card graphic-card" data-category="posters" data-desc="Minimalist graphic poster layout for executive organizational meeting." data-image="assets/Graphic%20designs/Meeting%20Poster.jpg" data-designer="Ruhaim Riyaz">
+            <div class="card-media-wrapper">
+              <img src="assets/Graphic%20designs/Meeting%20Poster.jpg" alt="Designed by Ruhaim Riyaz">
+            </div>
+            <div class="card-content-overlay">
+              <span class="card-category-badge">GRAPHIC DESIGN | EVENT POSTER</span>
+              <p class="card-credit-line">Designed by Ruhaim Riyaz</p>
+            </div>
+          </div>
+
+          <!-- Graphic Item 6 -->
+          <div class="portfolio-card graphic-card" data-category="campaigns" data-desc="Dynamic recruitment and membership campaign artwork." data-image="assets/Graphic%20designs/Membership%20Drive.jpg" data-designer="Ruhaim Riyaz">
+            <div class="card-media-wrapper">
+              <img src="assets/Graphic%20designs/Membership%20Drive.jpg" alt="Designed by Ruhaim Riyaz">
+            </div>
+            <div class="card-content-overlay">
+              <span class="card-category-badge">GRAPHIC DESIGN | RECRUITMENT</span>
+              <p class="card-credit-line">Designed by Ruhaim Riyaz</p>
+            </div>
+          </div>
+
+          <!-- Graphic Item 7 -->
+          <div class="portfolio-card graphic-card" data-category="campaigns" data-desc="Event countdown marketing artwork for social media launch." data-image="assets/Graphic%20designs/3%20days%20more.jpg" data-designer="Ruhaim Riyaz">
+            <div class="card-media-wrapper">
+              <img src="assets/Graphic%20designs/3%20days%20more.jpg" alt="Designed by Ruhaim Riyaz">
+            </div>
+            <div class="card-content-overlay">
+              <span class="card-category-badge">GRAPHIC DESIGN | COUNTDOWN</span>
+              <p class="card-credit-line">Designed by Ruhaim Riyaz</p>
+            </div>
+          </div>
+
+          <!-- Graphic Item 8 -->
+          <div class="portfolio-card graphic-card" data-category="branding" data-desc="High contrast futuristic graphic design composition." data-image="assets/Graphic%20designs/Final.jpg" data-designer="Ruhaim Riyaz">
+            <div class="card-media-wrapper">
+              <img src="assets/Graphic%20designs/Final.jpg" alt="Designed by Ruhaim Riyaz">
+            </div>
+            <div class="card-content-overlay">
+              <span class="card-category-badge">GRAPHIC DESIGN | CONCEPT ART</span>
+              <p class="card-credit-line">Designed by Ruhaim Riyaz</p>
+            </div>
+          </div>
+
+          <!-- Graphic Item 9 -->
+          <div class="portfolio-card graphic-card" data-category="posters" data-desc="Creative typographic poster exploring alignment and spatial contrast." data-image="assets/Graphic%20designs/Artwork.jpg" data-designer="Ruhaim Riyaz">
+            <div class="card-media-wrapper">
+              <img src="assets/Graphic%20designs/Artwork.jpg" alt="Designed by Ruhaim Riyaz">
+            </div>
+            <div class="card-content-overlay">
+              <span class="card-category-badge">GRAPHIC DESIGN | TYPOGRAPHY</span>
+              <p class="card-credit-line">Designed by Ruhaim Riyaz</p>
+            </div>
+          </div>
+
+          <!-- Graphic Item 10 -->
+          <div class="portfolio-card graphic-card" data-category="branding" data-desc="Brand logo study and icon geometry." data-image="assets/Graphic%20designs/Artwork%20(2).jpg" data-designer="Ruhaim Riyaz">
+            <div class="card-media-wrapper">
+              <img src="assets/Graphic%20designs/Artwork%20(2).jpg" alt="Designed by Ruhaim Riyaz">
+            </div>
+            <div class="card-content-overlay">
+              <span class="card-category-badge">GRAPHIC DESIGN | BRAND LOGO</span>
+              <p class="card-credit-line">Designed by Ruhaim Riyaz</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="section-container" id="about">
+        <div class="section-header">
+          <span class="section-tag">// BIOGRAPHY</span>
+          <h2 class="section-title monochrome-gradient-text">About Me</h2>
+        </div>
+
+        <div class="about-grid">
+          <!-- 3D Parallax Tilt Card featuring Ruhaim's Portrait -->
+          <div class="about-card-3d-wrapper">
+            <div class="about-card-3d" id="about-card">
+              <div class="about-img-container">
+                <img src="assets/Ruhaim%20Riyaz/FCFCD742-CF05-4E84-A148-FC4C5EADB072.jpg" alt="Ruhaim Riyaz Portrait" id="avatar-img">
+                <div class="about-card-overlay">
+                  <h3 class="about-name">Ruhaim Riyaz</h3>
+                  <p class="about-role">Photographer • Graphic Designer (Instagram: @ruhaim.jpeg)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bio Content -->
+          <div class="about-info-content">
+            <p class="about-bio-text">
+              Hi, I’m <strong>Ruhaim Riyaz</strong>, a photographer and graphic designer based in Sri Lanka. I specialize in event photography, creative visual content, and graphic design. My goal is to tell stories through powerful visuals and meaningful designs. (Instagram Handle: <strong>Visuals by Ruhaim / @ruhaim.jpeg</strong>).
+            </p>
+
+            <div class="about-details-list">
+              <div class="detail-item">
+                <span class="detail-label">Photographer Name</span>
+                <span class="detail-value">Ruhaim Riyaz</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Instagram Handle</span>
+                <span class="detail-value">Visuals by Ruhaim (@ruhaim.jpeg)</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Location</span>
+                <span class="detail-value">Sri Lanka</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Client Status</span>
+                <span class="detail-value">Available for Bookings</span>
+              </div>
+            </div>
+
+            <div class="stats-bar">
+              <div>
+                <div class="stat-num">65+</div>
+                <div class="stat-desc">Events Covered</div>
+              </div>
+              <div>
+                <div class="stat-num">90+</div>
+                <div class="stat-desc">Graphic Designs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- CLIENT REVIEWS & RATING (CLEAN - ORIGINAL REVIEWS FORM ONLY) -->
+      <!-- =================================================================== -->
+      <section class="section-container" id="reviews">
+        <div class="section-header">
+          <span class="section-tag">// TESTIMONIALS & FEEDBACK</span>
+          <h2 class="section-title monochrome-gradient-text">CLIENT REVIEWS & RATINGS</h2>
+          <p class="section-subtitle">Share your experience working with Ruhaim Riyaz on photography or graphic design projects.</p>
+        </div>
+
+        <div class="reviews-wrapper">
+          <!-- Live Submitted Client Reviews Container -->
+          <div class="reviews-grid" id="reviews-grid"></div>
+
+          <!-- Leave a Review & Rating Form -->
+          <div class="review-form-container">
+            <h3 class="card-title" style="text-align: center; margin-bottom: 0.5rem;">LEAVE A REVIEW & RATING</h3>
+            <p class="about-bio-text" style="text-align: center; margin-bottom: 1.5rem;">Have you worked with Ruhaim Riyaz? Submit your review below.</p>
+
+            <form class="contact-form" id="review-form" style="max-width: 650px; margin: 0 auto;">
+              
+              <div class="form-group" style="align-items: center;">
+                <label class="form-label">Select Your Rating</label>
+                <div class="star-rating-picker" id="star-picker">
+                  <i data-lucide="star" data-rating="1" class="star-picker-icon"></i>
+                  <i data-lucide="star" data-rating="2" class="star-picker-icon"></i>
+                  <i data-lucide="star" data-rating="3" class="star-picker-icon"></i>
+                  <i data-lucide="star" data-rating="4" class="star-picker-icon"></i>
+                  <i data-lucide="star" data-rating="5" class="star-picker-icon active"></i>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="reviewer-name">Your Name / Organization</label>
+                <input type="text" id="reviewer-name" class="form-input" placeholder="e.g. Alex Fernando" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="reviewer-comment">Your Comment / Review</label>
+                <textarea id="reviewer-comment" rows="3" class="form-textarea" placeholder="Share your experience working with Ruhaim Riyaz..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-mono-primary" style="justify-content: center;">
+                <span>SUBMIT YOUR REVIEW</span>
+                <i data-lucide="send"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="section-container" id="contact">
+        <div class="section-header">
+          <span class="section-tag">// COMMISSIONS</span>
+          <h2 class="section-title monochrome-gradient-text">GET IN TOUCH</h2>
+          <p class="section-subtitle">Book Ruhaim Riyaz for event photography, creative visual content, or graphic design projects.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Info & Social Handles -->
+          <div class="contact-info-card">
+            <h3 class="card-title">CONNECT WITH RUHAIM</h3>
+            <p class="about-bio-text">Reach out via official social profiles or send a direct message for bookings and commissions.</p>
+
+            <div class="social-handles-list">
+              <!-- Photography Instagram -->
+              <a href="https://www.instagram.com/ruhaim.jpeg?igsh=eDhzeTU5aGE4aHly" target="_blank" class="social-item">
+                <div class="social-icon-box"><i data-lucide="camera"></i></div>
+                <div>
+                  <div class="social-title">Photography Instagram</div>
+                  <div style="font-size:0.8rem; color:var(--text-muted);">Visuals by Ruhaim (@ruhaim.jpeg)</div>
+                </div>
+              </a>
+
+              <!-- Personal Instagram -->
+              <a href="https://www.instagram.com/ruhaim_riyaz?igsh=MTZ5NHV5ajU5cWJlMg%3D%3D&utm_source=qr" target="_blank" class="social-item">
+                <div class="social-icon-box"><i data-lucide="instagram"></i></div>
+                <div>
+                  <div class="social-title">Personal Instagram</div>
+                  <div style="font-size:0.8rem; color:var(--text-muted);">@ruhaim_riyaz</div>
+                </div>
+              </a>
+
+              <!-- Photography Facebook -->
+              <a href="https://www.facebook.com/share/1BWj2aR5GK/?mibextid=wwXIfr" target="_blank" class="social-item">
+                <div class="social-icon-box"><i data-lucide="facebook"></i></div>
+                <div>
+                  <div class="social-title">Photography Facebook</div>
+                  <div style="font-size:0.8rem; color:var(--text-muted);">Ruhaim Riyaz Photography</div>
+                </div>
+              </a>
+
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/in/ruhaim-riyaz-361460422?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" class="social-item">
+                <div class="social-icon-box"><i data-lucide="linkedin"></i></div>
+                <div>
+                  <div class="social-title">LinkedIn Profile</div>
+                  <div style="font-size:0.8rem; color:var(--text-muted);">in/ruhaim-riyaz</div>
+                </div>
+              </a>
+
+              <!-- Direct Email -->
+              <a href="mailto:contact@ruhaimriyaz.art" class="social-item">
+                <div class="social-icon-box"><i data-lucide="mail"></i></div>
+                <div>
+                  <div class="social-title">Direct Email</div>
+                  <div style="font-size:0.8rem; color:var(--text-muted);">contact@ruhaimriyaz.art</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <label class="form-label" for="client-name">Your Full Name</label>
+              <input type="text" id="client-name" class="form-input" placeholder="e.g. Sarah Jenkins" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="client-email">Email Address</label>
+              <input type="email" id="client-email" class="form-input" placeholder="e.g. sarah@domain.com" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="project-type">Project Requirement</label>
+              <select id="project-type" class="form-select">
+                <option value="weddings">Event Photography Shoot</option>
+                <option value="sports">Sports Photography / Action Shoot</option>
+                <option value="graphic">Graphic Design / Branding / Social Media</option>
+                <option value="both">All (Photography & Graphic Design)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">Project Details</label>
+              <textarea id="message" rows="4" class="form-textarea" placeholder="Tell me about your event date, visual content, or graphic design vision..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-mono-primary" style="width: 100%; justify-content: center;">
+              <span>SEND INQUIRY TO RUHAIM</span>
+              <i data-lucide="send"></i>
+            </button>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer with Clean Logo (No Box Container) -->
+    <footer class="footer">
+      <div class="footer-logo-wrapper">
+        <img src="assets/Logo/Ruhaim%20Riyaz%20Watermark%20II.png" alt="Ruhaim Riyaz Logo" class="footer-logo-img">
+      </div>
+      <p class="footer-copy">© 2026 Visual by Ruhaim. All Rights Reserved.</p>
+    </footer>
+
+  </div>
+
+  <!-- Lightbox Modal Component with Official Intellectual Property Notice -->
+  <div class="modal-overlay" id="lightbox-modal">
+    <div class="modal-content-container">
+      <button class="modal-close-btn" id="modal-close"><i data-lucide="x"></i></button>
+      <div class="modal-image-wrapper">
+        <img id="modal-img" src="" alt="Artwork Preview">
+      </div>
+      <div class="modal-details-side">
+        <div>
+          <span class="modal-category" id="modal-category">CATEGORY</span>
+          <h3 class="modal-title" id="modal-title"></h3>
+          <p class="modal-description" id="modal-desc">Description</p>
+          <p class="modal-credit" id="modal-credit" style="color: var(--accent-white); font-weight: 700; margin-bottom: 1rem;"></p>
+          
+          <!-- Exact Intellectual Property Notice -->
+          <div class="ip-notice-box" style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-liquid); padding: 0.85rem; border-radius: 8px; margin-bottom: 1.25rem; font-size: 0.72rem; line-height: 1.5; color: var(--text-muted);">
+            <div style="color: #FFFFFF; font-weight: 700; margin-bottom: 0.35rem;">© Ruhaim Riyaz. All Rights Reserved.</div>
+            This photograph is the intellectual property of Ruhaim Riyaz. Unauthorized use, reproduction, editing, redistribution, publication, or AI training is prohibited without prior written permission.
+          </div>
+        </div>
+
+        <a href="#contact" class="btn-mono-primary" id="modal-cta" style="justify-content: center;">
+          <span>BOOK RUHAIM FOR THIS WORK</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Main Application Script -->
+  <script src="main.js"></script>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>
