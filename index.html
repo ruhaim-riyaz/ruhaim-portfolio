@@ -46,6 +46,11 @@
         </div>
       </a>
       
+      <!-- Automatic Background Audio (The Weeknd - Blinding Lights Instrumental) -->
+      <audio id="bg-audio" loop autoplay preload="auto" style="display:none;" src="assets/Music/blinding_lights.mp3">
+        <source src="assets/Music/blinding_lights.mp3" type="audio/mpeg">
+      </audio>
+
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation Menu">
         <i data-lucide="menu" class="icon-menu"></i>
         <i data-lucide="x" class="icon-close"></i>
@@ -386,7 +391,7 @@
           <div class="about-card-3d-wrapper">
             <div class="about-card-3d" id="about-card">
               <div class="about-img-container">
-                <img src="assets/Ruhaim%20Riyaz/FCFCD742-CF05-4E84-A148-FC4C5EADB072.jpg" alt="Ruhaim Riyaz Portrait" id="avatar-img">
+                <img src="assets/Ruhaim%20Riyaz/IMG_0425.JPG" alt="Ruhaim Riyaz Portrait" id="avatar-img">
                 <div class="about-card-overlay">
                   <h3 class="about-name">Ruhaim Riyaz</h3>
                   <p class="about-role">Photographer • Graphic Designer (Instagram: @ruhaim.jpeg)</p>
@@ -606,8 +611,8 @@
           <p class="modal-description" id="modal-desc">Description</p>
           <p class="modal-credit" id="modal-credit" style="color: var(--accent-white); font-weight: 700; margin-bottom: 1rem;"></p>
           
-          <!-- Exact Intellectual Property Notice -->
-          <div class="ip-notice-box" style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-liquid); padding: 0.85rem; border-radius: 8px; margin-bottom: 1.25rem; font-size: 0.72rem; line-height: 1.5; color: var(--text-muted);">
+          <!-- Exact Intellectual Property Notice (Shown ONLY for Photography) -->
+          <div class="ip-notice-box" id="ip-notice-box" style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-liquid); padding: 0.85rem; border-radius: 8px; margin-bottom: 1.25rem; font-size: 0.72rem; line-height: 1.5; color: var(--text-muted);">
             <div style="color: #FFFFFF; font-weight: 700; margin-bottom: 0.35rem;">© Ruhaim Riyaz. All Rights Reserved.</div>
             This photograph is the intellectual property of Ruhaim Riyaz. Unauthorized use, reproduction, editing, redistribution, publication, or AI training is prohibited without prior written permission.
           </div>

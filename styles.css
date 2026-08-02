@@ -8,33 +8,34 @@
   --bg-dark: #060608;
   
   /* iOS 26 Liquid Glass Tokens */
-  --liquid-glass-bg: rgba(255, 255, 255, 0.045);
-  --liquid-glass-hover: rgba(255, 255, 255, 0.09);
-  --liquid-blur: blur(32px) saturate(200%);
-  --liquid-blur-heavy: blur(45px) saturate(220%);
+  --liquid-glass-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  --liquid-glass-hover: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.06) 100%);
+  --liquid-blur: blur(40px) saturate(220%) contrast(105%);
+  --liquid-blur-heavy: blur(55px) saturate(250%) contrast(110%);
   
   --accent-white: #FFFFFF;
   --off-white: #F4F4F6;
   --accent-silver: #E5E5EA;
   --mono-gradient: linear-gradient(135deg, #FFFFFF 0%, #E5E5EA 30%, #9E9EA8 70%, #FFFFFF 100%);
   
-  /* Liquid Specular Rim Shadows */
-  --liquid-rim-glow: inset 0 1.5px 1.5px rgba(255, 255, 255, 0.45), 
-                     inset 0 -1px 2px rgba(0, 0, 0, 0.6), 
-                     0 25px 50px rgba(0, 0, 0, 0.85);
+  /* Liquid Specular Rim Shadows & High Refraction Specular Glows */
+  --liquid-rim-glow: inset 0 1.5px 2px rgba(255, 255, 255, 0.65), 
+                     inset 0 -1.5px 3px rgba(0, 0, 0, 0.7), 
+                     0 25px 50px rgba(0, 0, 0, 0.9),
+                     0 0 25px rgba(255, 255, 255, 0.12);
 
-  --liquid-rim-glow-heavy: inset 0 2px 3px rgba(255, 255, 255, 0.7), 
-                           inset 0 -2px 4px rgba(0, 0, 0, 0.8), 
-                           0 30px 70px rgba(0, 0, 0, 0.95),
-                           0 0 35px rgba(255, 255, 255, 0.2);
+  --liquid-rim-glow-heavy: inset 0 2.5px 4px rgba(255, 255, 255, 0.9), 
+                           inset 0 -2px 5px rgba(0, 0, 0, 0.85), 
+                           0 35px 75px rgba(0, 0, 0, 0.95),
+                           0 0 50px rgba(255, 255, 255, 0.35);
 
   --text-main: #F4F4F6;
   --text-muted: #A0A0A8;
   --text-sub: #D1D1D6;
 
-  --border-liquid: rgba(255, 255, 255, 0.16);
-  --border-liquid-bright: rgba(255, 255, 255, 0.65);
-  --border-glass: rgba(255, 255, 255, 0.09);
+  --border-liquid: rgba(255, 255, 255, 0.22);
+  --border-liquid-bright: rgba(255, 255, 255, 0.75);
+  --border-glass: rgba(255, 255, 255, 0.14);
 
   --font-mono: 'Space Grotesk', sans-serif;
   --font-heading: 'Syne', sans-serif;
@@ -709,7 +710,7 @@ body.cursor-hover .custom-cursor-follower {
   height: 100%;
   object-fit: cover;
   object-position: center top;
-  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
   opacity: 1;
 }
 
@@ -1020,8 +1021,11 @@ body.cursor-hover .custom-cursor-follower {
   width: 100%;
   padding: 0.85rem 1.1rem;
   border-radius: var(--radius-md);
-  background: rgba(8, 8, 10, 0.85);
-  border: 1px solid var(--border-glass);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.015) 100%);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid var(--border-liquid);
+  box-shadow: inset 0 1px 1.5px rgba(255, 255, 255, 0.3), 0 8px 24px rgba(0, 0, 0, 0.5);
   color: var(--off-white);
   font-family: var(--font-body);
   font-size: 0.88rem;
@@ -1036,7 +1040,8 @@ body.cursor-hover .custom-cursor-follower {
 
 .form-input:focus, .form-select:focus, .form-textarea:focus {
   border-color: var(--border-liquid-bright);
-  box-shadow: 0 0 16px rgba(255, 255, 255, 0.25);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.04) 100%);
+  box-shadow: inset 0 1.5px 2px rgba(255, 255, 255, 0.6), 0 0 25px rgba(255, 255, 255, 0.35);
 }
 
 /* Footer & Clean Logo Layout */
@@ -1334,6 +1339,15 @@ body.cursor-hover .custom-cursor-follower {
     width: calc(100% - 1.25rem);
     padding: 0.6rem 1.25rem;
     top: 0.75rem;
+  }
+
+  .music-player-widget {
+    margin-right: 0.6rem;
+  }
+
+  .music-toggle-btn {
+    padding: 0.4rem 0.65rem;
+    font-size: 0.68rem;
   }
 
   .brand-name {

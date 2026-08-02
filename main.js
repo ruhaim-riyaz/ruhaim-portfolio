@@ -75,49 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const particles = new THREE.Points(pGeo, pMat);
     scene.add(particles);
 
-    // 1D. Continuous 3D Orbital Photo Carousel
-    const photoGroup = new THREE.Group();
-    const photoPaths = [
-      'assets/Photographs/IMG_2184.jpg',
-      'assets/Photographs/IMG_2180.jpg',
-      'assets/Photographs/IMG_2181.jpg',
-      'assets/Photographs/IMG_2182.jpg',
-      'assets/Photographs/IMG_2183.jpg',
-      'assets/Photographs/IMG_2185.jpg'
-    ];
 
-    const planeGeo = new THREE.PlaneGeometry(11, 7.5);
-
-    photoPaths.forEach((path, idx) => {
-      textureLoader.load(path, (texture) => {
-        const mat = new THREE.MeshBasicMaterial({
-          map: texture,
-          transparent: true,
-          opacity: 0.25,
-          side: THREE.DoubleSide
-        });
-        const mesh = new THREE.Mesh(planeGeo, mat);
-
-        const angle = (idx / photoPaths.length) * Math.PI * 2;
-        const radius = 30;
-        mesh.position.set(
-          Math.cos(angle) * radius,
-          (Math.random() - 0.5) * 18,
-          Math.sin(angle) * radius - 10
-        );
-
-        mesh.rotation.y = -angle + Math.PI / 2;
-        mesh.userData = {
-          initialY: mesh.position.y,
-          floatOffset: idx * 1.5,
-          angleOffset: angle
-        };
-
-        photoGroup.add(mesh);
-      });
-    });
-
-    scene.add(photoGroup);
 
     // 1E. Continuous 3D Spinning Logo Plane
     const logoGroup = new THREE.Group();
@@ -238,11 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
       particles.rotation.y = elapsedTime * 0.05 + mouseX * 0.2;
       particles.rotation.x = elapsedTime * 0.03 + mouseY * 0.2;
 
-      // Photo Orbit
-      photoGroup.rotation.y = elapsedTime * 0.08 + mouseX * 0.3;
-      photoGroup.children.forEach(mesh => {
-        mesh.position.y = mesh.userData.initialY + Math.sin(elapsedTime * 1.5 + mesh.userData.floatOffset) * 2.0;
-      });
+
 
       // Logo Motion
       logoGroup.rotation.y = Math.sin(elapsedTime * 0.8) * 0.35 + mouseX * 0.3;
@@ -298,32 +252,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ------------------------------------------------------------------------
-   * 3. AUTOMATIC 15-SECOND PORTRAIT SLIDESHOW ("THE CREATIVE MIND")
+   * 3. ABOUT ME SINGLE PORTRAIT ("RUHAIM RIYAZ")
    * ------------------------------------------------------------------------ */
   const avatarImg = document.getElementById('avatar-img');
   if (avatarImg) {
-    const portraitList = [
-      'assets/Ruhaim%20Riyaz/FCFCD742-CF05-4E84-A148-FC4C5EADB072.jpg',
-      'assets/Ruhaim%20Riyaz/IMG_1564.jpg',
-      'assets/Ruhaim%20Riyaz/IMG_1989.PNG',
-      'assets/Ruhaim%20Riyaz/E3E9D2A8-C4A0-49B9-BC55-46CA2C7A7628.PNG',
-      'assets/Ruhaim%20Riyaz/IMG_0425.JPG'
-    ];
-
-    let currentPortraitIdx = 0;
-
-    setInterval(() => {
-      avatarImg.classList.add('fade-out');
-
-      setTimeout(() => {
-        currentPortraitIdx = (currentPortraitIdx + 1) % portraitList.length;
-        avatarImg.src = portraitList[currentPortraitIdx];
-
-        avatarImg.onload = () => {
-          avatarImg.classList.remove('fade-out');
-        };
-      }, 700);
-    }, 15000);
+    avatarImg.src = 'assets/Ruhaim%20Riyaz/IMG_0425.JPG';
   }
 
   /* ------------------------------------------------------------------------
@@ -423,6 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalTitle = document.getElementById('modal-title');
   const modalDesc = document.getElementById('modal-desc');
   const modalCredit = document.getElementById('modal-credit');
+  const ipNoticeBox = document.getElementById('ip-notice-box');
   const allPortfolioCards = document.querySelectorAll('.portfolio-card');
 
   allPortfolioCards.forEach(card => {
@@ -439,6 +373,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (modalDesc) modalDesc.textContent = desc;
       if (modalCategory) modalCategory.textContent = category.toUpperCase();
 
+      const isGraphic = card.classList.contains('graphic-card') || !!designer;
+
       if (modalCredit) {
         if (photographer) {
           modalCredit.textContent = `Photographed by: ${photographer}`;
@@ -446,6 +382,15 @@ document.addEventListener('DOMContentLoaded', () => {
           modalCredit.textContent = `Designed by: ${designer}`;
         } else {
           modalCredit.textContent = `Photographed by Ruhaim Riyaz`;
+        }
+      }
+
+      // Copyright IP Protection Notice: Shown EXCLUSIVELY for Photography, HIDDEN for Graphic Design
+      if (ipNoticeBox) {
+        if (isGraphic) {
+          ipNoticeBox.style.display = 'none';
+        } else {
+          ipNoticeBox.style.display = 'block';
         }
       }
 
@@ -618,5 +563,56 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  /* ------------------------------------------------------------------------
+   * 11. AUTOMATIC CONTINUOUS BACKGROUND MUSIC PLAYER
+   * (The Weeknd - Blinding Lights Official Instrumental)
+   * ------------------------------------------------------------------------ */
+  let bgAudio = document.getElementById('bg-audio');
+  if (!bgAudio) {
+    bgAudio = new Audio('assets/Music/blinding_lights.mp3');
+    bgAudio.id = 'bg-audio';
+    bgAudio.loop = true;
+    document.body.appendChild(bgAudio);
+  }
+
+  bgAudio.volume = 0.75;
+  bgAudio.muted = false;
+
+  let isAudioStarted = false;
+
+  function forcePlayAudio() {
+    if (isAudioStarted && !bgAudio.paused) return;
+    
+    bgAudio.muted = false;
+    bgAudio.volume = 0.75;
+    
+    const promise = bgAudio.play();
+    if (promise !== undefined) {
+      promise.then(() => {
+        isAudioStarted = true;
+      }).catch(err => {
+        // Autoplay policy prevented immediate unmuted playback until first interaction
+      });
+    }
+  }
+
+  // Attempt to play on load
+  forcePlayAudio();
+  window.addEventListener('load', forcePlayAudio);
+
+  // Attach to all user interaction events so the audio plays instantly on first click, tap, scroll, or movement
+  const interactionEvents = ['click', 'touchstart', 'touchend', 'pointerdown', 'mousemove', 'scroll', 'keydown', 'focus'];
+
+  function handleUserInteraction() {
+    forcePlayAudio();
+    if (isAudioStarted && !bgAudio.paused) {
+      interactionEvents.forEach(evt => window.removeEventListener(evt, handleUserInteraction, { capture: true }));
+    }
+  }
+
+  interactionEvents.forEach(evt => {
+    window.addEventListener(evt, handleUserInteraction, { passive: true, capture: true });
+  });
 
 });
