@@ -23,8 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(window.innerWidth, window.innerHeight);
 
-    const textureLoader = new THREE.TextureLoader();
-
     // 1A. Ambient Lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
     scene.add(ambientLight);
@@ -74,25 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const particles = new THREE.Points(pGeo, pMat);
     scene.add(particles);
-
-
-
-    // 1E. Continuous 3D Spinning Logo Plane
-    const logoGroup = new THREE.Group();
-    textureLoader.load('assets/Logo/Ruhaim%20Riyaz%20Watermark%20II.png', (logoTex) => {
-      const logoGeo = new THREE.PlaneGeometry(12, 12);
-      const logoMat = new THREE.MeshBasicMaterial({
-        map: logoTex,
-        transparent: true,
-        opacity: 0.3,
-        side: THREE.DoubleSide,
-        blending: THREE.AdditiveBlending
-      });
-      const logoMesh = new THREE.Mesh(logoGeo, logoMat);
-      logoMesh.position.set(0, 2, -6);
-      logoGroup.add(logoMesh);
-    });
-    scene.add(logoGroup);
 
     // Dynamic Cursor Tracking
     let targetMouseX = 0;
@@ -195,13 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
       // Particle Vortex
       particles.rotation.y = elapsedTime * 0.05 + mouseX * 0.2;
       particles.rotation.x = elapsedTime * 0.03 + mouseY * 0.2;
-
-
-
-      // Logo Motion
-      logoGroup.rotation.y = Math.sin(elapsedTime * 0.8) * 0.35 + mouseX * 0.3;
-      logoGroup.rotation.z = Math.cos(elapsedTime * 0.6) * 0.1;
-      logoGroup.position.y = Math.sin(elapsedTime * 1.2) * 1.5;
 
       renderer.render(scene, camera);
     }
