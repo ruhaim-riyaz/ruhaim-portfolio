@@ -135,6 +135,7 @@ body.cursor-hover .custom-cursor-follower {
 .monochrome-gradient-text {
   background: linear-gradient(90deg, #FFFFFF 0%, #A0A0A8 25%, #FFFFFF 50%, #D1D1D6 75%, #FFFFFF 100%);
   background-size: 200% auto;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
