@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCursor();
 
   // Hover Effect for Interactive Elements
-  const hoverElements = document.querySelectorAll('a, button, .portfolio-card, .social-item, .tab-btn, .about-card-3d, .review-card');
+  const hoverElements = document.querySelectorAll('a, button, .portfolio-card, .social-item, .tab-btn, .about-card-3d');
   hoverElements.forEach(el => {
     el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
     el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ------------------------------------------------------------------------
    * 4. 3D PERSPECTIVE TILT FOR CARDS
    * ------------------------------------------------------------------------ */
-  const allCards = document.querySelectorAll('.portfolio-card, .about-card-3d, .review-card');
+  const allCards = document.querySelectorAll('.portfolio-card, .about-card-3d');
 
   allCards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
@@ -384,97 +384,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape' && lightboxModal.classList.contains('active')) closeModal();
   });
 
-  /* ------------------------------------------------------------------------
-   * 7. INTERACTIVE CLIENT REVIEWS & STAR RATING SYSTEM
-   * ------------------------------------------------------------------------ */
-  const starPicker = document.getElementById('star-picker');
-  let selectedRating = 5;
 
-  if (starPicker) {
-    const starIcons = starPicker.querySelectorAll('.star-picker-icon');
-    starIcons.forEach(icon => {
-      icon.addEventListener('click', () => {
-        selectedRating = parseInt(icon.getAttribute('data-rating') || '5', 10);
-        starIcons.forEach((s, idx) => {
-          if (idx < selectedRating) {
-            s.classList.add('active');
-          } else {
-            s.classList.remove('active');
-          }
-        });
-      });
-    });
-  }
-
-  const reviewForm = document.getElementById('review-form');
-  const reviewsGrid = document.getElementById('reviews-grid');
-
-  if (reviewForm && reviewsGrid) {
-    reviewForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const reviewerName = document.getElementById('reviewer-name').value;
-      const reviewerComment = document.getElementById('reviewer-comment').value;
-
-      let starsHTML = '';
-      for (let i = 0; i < selectedRating; i++) {
-        starsHTML += '<i data-lucide="star" class="star-filled"></i>';
-      }
-
-      const newReviewCard = document.createElement('div');
-      newReviewCard.className = 'review-card';
-      newReviewCard.innerHTML = `
-        <div class="review-stars">${starsHTML}</div>
-        <p class="review-comment">"${reviewerComment}"</p>
-        <div class="review-author">
-          <span class="author-name">${reviewerName}</span>
-          <span class="author-tag">Verified Client Review</span>
-        </div>
-      `;
-
-      reviewsGrid.prepend(newReviewCard);
-      if (typeof lucide !== 'undefined') lucide.createIcons();
-
-      const submitBtn = reviewForm.querySelector('button[type="submit"]');
-      const originalHTML = submitBtn.innerHTML;
-
-      submitBtn.innerHTML = '<span>REVIEW PUBLISHED!</span><i data-lucide="check"></i>';
-      submitBtn.style.background = 'rgba(255, 255, 255, 0.15)';
-      submitBtn.style.color = '#F4F4F6';
-
-      setTimeout(() => {
-        reviewForm.reset();
-        submitBtn.innerHTML = originalHTML;
-        submitBtn.style.background = '';
-        submitBtn.style.color = '';
-        if (typeof lucide !== 'undefined') lucide.createIcons();
-      }, 3000);
-    });
-  }
-
-  /* ------------------------------------------------------------------------
-   * 8. CONTACT FORM SUBMISSION FEEDBACK
-   * ------------------------------------------------------------------------ */
-  const contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
-      const originalHTML = submitBtn.innerHTML;
-
-      submitBtn.innerHTML = '<span>INQUIRY SENT SUCCESSFULLY!</span><i data-lucide="check"></i>';
-      submitBtn.style.background = 'rgba(255, 255, 255, 0.15)';
-      submitBtn.style.color = '#F4F4F6';
-      if (typeof lucide !== 'undefined') lucide.createIcons();
-
-      setTimeout(() => {
-        contactForm.reset();
-        submitBtn.innerHTML = originalHTML;
-        submitBtn.style.background = '';
-        submitBtn.style.color = '';
-        if (typeof lucide !== 'undefined') lucide.createIcons();
-      }, 3500);
-    });
-  }
 
   /* ------------------------------------------------------------------------
    * 9. ACTIVE NAVBAR LINK HIGHLIGHT ON SCROLL

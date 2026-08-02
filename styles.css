@@ -857,6 +857,28 @@ body.cursor-hover .custom-cursor-follower {
   box-shadow: var(--liquid-rim-glow-heavy);
 }
 
+.review-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.review-category-badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-glass);
+  color: var(--off-white);
+  box-shadow: var(--liquid-rim-glow);
+}
+
 .review-stars {
   display: flex;
   align-items: center;
@@ -929,9 +951,9 @@ body.cursor-hover .custom-cursor-follower {
 
 /* iOS 26 Liquid Glass Contact Section */
 .contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .contact-info-card {
@@ -941,6 +963,8 @@ body.cursor-hover .custom-cursor-follower {
   box-shadow: var(--liquid-rim-glow);
   border-radius: var(--radius-lg);
   padding: 2.5rem 2rem;
+  max-width: 650px;
+  width: 100%;
 }
 
 .social-handles-list {
@@ -982,6 +1006,19 @@ body.cursor-hover .custom-cursor-follower {
   align-items: center;
   justify-content: center;
   color: var(--off-white);
+  flex-shrink: 0;
+}
+
+.social-icon-box svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--off-white);
+  transition: transform 0.3s ease, stroke 0.3s ease;
+}
+
+.social-item:hover .social-icon-box svg {
+  stroke: #FFFFFF;
+  transform: scale(1.1);
 }
 
 .social-title {

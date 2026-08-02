@@ -62,7 +62,6 @@
           <li><a href="#photography" class="nav-link">Photography</a></li>
           <li><a href="#graphic-design" class="nav-link">Graphic Design</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#reviews" class="nav-link">Reviews</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
@@ -383,56 +382,6 @@
         </div>
       </section>
 
-      <!-- =================================================================== -->
-      <!-- CLIENT REVIEWS & RATING (CLEAN - ORIGINAL REVIEWS FORM ONLY) -->
-      <!-- =================================================================== -->
-      <section class="section-container" id="reviews">
-        <div class="section-header">
-          <h2 class="section-title monochrome-gradient-text">CLIENT REVIEWS & RATINGS</h2>
-          <p class="section-subtitle">Share your experience working with Ruhaim Riyaz on photography or graphic design projects.</p>
-        </div>
-
-        <div class="reviews-wrapper">
-          <!-- Live Submitted Client Reviews Container -->
-          <div class="reviews-grid" id="reviews-grid"></div>
-
-          <!-- Leave a Review & Rating Form -->
-          <div class="review-form-container">
-            <h3 class="card-title" style="text-align: center; margin-bottom: 0.5rem;">LEAVE A REVIEW & RATING</h3>
-            <p class="about-bio-text" style="text-align: center; margin-bottom: 1.5rem;">Have you worked with Ruhaim Riyaz? Submit your review below.</p>
-
-            <form class="contact-form" id="review-form" style="max-width: 650px; margin: 0 auto;">
-              
-              <div class="form-group" style="align-items: center;">
-                <label class="form-label">Select Your Rating</label>
-                <div class="star-rating-picker" id="star-picker">
-                  <i data-lucide="star" data-rating="1" class="star-picker-icon"></i>
-                  <i data-lucide="star" data-rating="2" class="star-picker-icon"></i>
-                  <i data-lucide="star" data-rating="3" class="star-picker-icon"></i>
-                  <i data-lucide="star" data-rating="4" class="star-picker-icon"></i>
-                  <i data-lucide="star" data-rating="5" class="star-picker-icon active"></i>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="reviewer-name">Your Name / Organization</label>
-                <input type="text" id="reviewer-name" class="form-input" placeholder="e.g. Alex Fernando" required>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="reviewer-comment">Your Comment / Review</label>
-                <textarea id="reviewer-comment" rows="3" class="form-textarea" placeholder="Share your experience working with Ruhaim Riyaz..." required></textarea>
-              </div>
-
-              <button type="submit" class="btn-mono-primary" style="justify-content: center;">
-                <span>SUBMIT YOUR REVIEW</span>
-                <i data-lucide="send"></i>
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-
       <!-- Contact Section -->
       <section class="section-container" id="contact">
         <div class="section-header">
@@ -449,25 +398,20 @@
             <div class="social-handles-list">
               <!-- Photography Instagram -->
               <a href="https://www.instagram.com/ruhaim.jpeg?igsh=eDhzeTU5aGE4aHly" target="_blank" class="social-item">
-                <div class="social-icon-box"><i data-lucide="camera"></i></div>
+                <div class="social-icon-box">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                </div>
                 <div>
                   <div class="social-title">Photography Instagram</div>
                   <div style="font-size:0.8rem; color:var(--text-muted);">Visuals by Ruhaim (@ruhaim.jpeg)</div>
                 </div>
               </a>
 
-              <!-- Personal Instagram -->
-              <a href="https://www.instagram.com/ruhaim_riyaz?igsh=MTZ5NHV5ajU5cWJlMg%3D%3D&utm_source=qr" target="_blank" class="social-item">
-                <div class="social-icon-box"><i data-lucide="instagram"></i></div>
-                <div>
-                  <div class="social-title">Personal Instagram</div>
-                  <div style="font-size:0.8rem; color:var(--text-muted);">@ruhaim_riyaz</div>
-                </div>
-              </a>
-
               <!-- Photography Facebook -->
               <a href="https://www.facebook.com/share/1BWj2aR5GK/?mibextid=wwXIfr" target="_blank" class="social-item">
-                <div class="social-icon-box"><i data-lucide="facebook"></i></div>
+                <div class="social-icon-box">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </div>
                 <div>
                   <div class="social-title">Photography Facebook</div>
                   <div style="font-size:0.8rem; color:var(--text-muted);">Ruhaim Riyaz Photography</div>
@@ -476,56 +420,38 @@
 
               <!-- LinkedIn -->
               <a href="https://www.linkedin.com/in/ruhaim-riyaz-361460422?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" class="social-item">
-                <div class="social-icon-box"><i data-lucide="linkedin"></i></div>
+                <div class="social-icon-box">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                </div>
                 <div>
                   <div class="social-title">LinkedIn Profile</div>
                   <div style="font-size:0.8rem; color:var(--text-muted);">in/ruhaim-riyaz</div>
                 </div>
               </a>
 
+              <!-- WhatsApp -->
+              <a href="https://wa.me/94752154499" target="_blank" class="social-item">
+                <div class="social-icon-box">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>
+                </div>
+                <div>
+                  <div class="social-title">WhatsApp</div>
+                  <div style="font-size:0.8rem; color:var(--text-muted);">+94 75 215 4499</div>
+                </div>
+              </a>
+
               <!-- Direct Email -->
-              <a href="mailto:contact@ruhaimriyaz.art" class="social-item">
-                <div class="social-icon-box"><i data-lucide="mail"></i></div>
+              <a href="mailto:mruhaimriyaz@gmail.com" class="social-item">
+                <div class="social-icon-box">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </div>
                 <div>
                   <div class="social-title">Direct Email</div>
-                  <div style="font-size:0.8rem; color:var(--text-muted);">contact@ruhaimriyaz.art</div>
+                  <div style="font-size:0.8rem; color:var(--text-muted);">mruhaimriyaz@gmail.com</div>
                 </div>
               </a>
             </div>
           </div>
-
-          <!-- Contact Form -->
-          <form class="contact-form" id="contact-form">
-            <div class="form-group">
-              <label class="form-label" for="client-name">Your Full Name</label>
-              <input type="text" id="client-name" class="form-input" placeholder="e.g. Sarah Jenkins" required>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="client-email">Email Address</label>
-              <input type="email" id="client-email" class="form-input" placeholder="e.g. sarah@domain.com" required>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="project-type">Project Requirement</label>
-              <select id="project-type" class="form-select">
-                <option value="weddings">Event Photography Shoot</option>
-                <option value="sports">Sports Photography / Action Shoot</option>
-                <option value="graphic">Graphic Design / Branding / Social Media</option>
-                <option value="both">All (Photography & Graphic Design)</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="message">Project Details</label>
-              <textarea id="message" rows="4" class="form-textarea" placeholder="Tell me about your event date, visual content, or graphic design vision..." required></textarea>
-            </div>
-
-            <button type="submit" class="btn-mono-primary" style="width: 100%; justify-content: center;">
-              <span>SEND INQUIRY TO RUHAIM</span>
-              <i data-lucide="send"></i>
-            </button>
-          </form>
         </div>
       </section>
 
