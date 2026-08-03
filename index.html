@@ -7,34 +7,50 @@
   <meta name="description" content="Official Portfolio of Ruhaim Riyaz - Photographer, Graphic Designer & Visual Storyteller based in Sri Lanka.">
   <meta name="author" content="Ruhaim Riyaz">
   
-  <!-- Google Fonts for Minimalist Graphic Typography -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS Stylesheet -->
+  <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
   
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <!-- Three.js CDN -->
+  <!-- Three.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <!-- GSAP Animation Library -->
+  <!-- GSAP + ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
-  <!-- WebGL Dynamic 3D Abstract Parallax Background Canvas -->
+  <!-- Loading Screen — Logo Writing Animation -->
+  <div class="loader-overlay" id="loader-overlay">
+    <div class="loader-content">
+      <div class="loader-logo-container">
+        <img src="assets/Logo/Ruhaim%20Riyaz%20Watermark%20II.png" alt="Loading..." class="loader-logo" id="loader-logo">
+        <div class="loader-pen" id="loader-pen"></div>
+      </div>
+      <div class="loader-progress-track">
+        <div class="loader-progress-bar" id="loader-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WebGL 3D Background Canvas -->
   <canvas id="webgl-canvas"></canvas>
 
-  <!-- Custom Trailing Pointer Cursors -->
+  <!-- Custom Cursor -->
   <div class="custom-cursor" id="cursor"></div>
   <div class="custom-cursor-follower" id="cursor-follower"></div>
 
-  <!-- Main Website Content Container -->
+  <!-- Main Content -->
   <div class="main-wrapper" id="main-wrapper">
 
-    <!-- Header & Navigation -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- NAVIGATION                                                        -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
     <header class="navbar">
       <a href="#hero" class="navbar-brand">
         <div class="brand-symbol">
@@ -46,7 +62,7 @@
         </div>
       </a>
       
-      <!-- Automatic Background Audio (The Weeknd - Blinding Lights Instrumental) -->
+      <!-- Background Audio -->
       <audio id="bg-audio" loop autoplay preload="auto" style="display:none;" src="assets/Music/blinding_lights.mp3">
         <source src="assets/Music/blinding_lights.mp3" type="audio/mpeg">
       </audio>
@@ -60,7 +76,7 @@
         <ul class="nav-links">
           <li><a href="#hero" class="nav-link active">Home</a></li>
           <li><a href="#photography" class="nav-link">Photography</a></li>
-          <li><a href="#graphic-design" class="nav-link">Graphic Design</a></li>
+          <li><a href="#graphic-design" class="nav-link">Design</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
@@ -69,330 +85,368 @@
 
     <main>
 
-      <!-- Hero Section with Central Logo & Tagline -->
+      <!-- ═══════════════════════════════════════════════════════════════ -->
+      <!-- HERO — 3D Camera Lens + Floating Logo + Particles             -->
+      <!-- ═══════════════════════════════════════════════════════════════ -->
       <section class="hero-section" id="hero">
-        <div class="hero-graphic-bg-grid"></div>
+        <!-- Decorative animated lines -->
+        <div class="hero-line hero-line-left"></div>
+        <div class="hero-line hero-line-right"></div>
+        <div class="hero-line hero-line-top"></div>
+        <div class="hero-line hero-line-bottom"></div>
+
+        <!-- Ambient glow orbs -->
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
+
         <div class="hero-content">
           <div class="hero-tag-badge">
             <span class="pulse-dot"></span>
-            <span>Visuals by Ruhaim</span>
+            <span>Available for Bookings</span>
           </div>
 
-          <!-- Ruhaim Riyaz Logo Image Replacement -->
           <div class="hero-logo-wrapper">
-            <img src="assets/Logo/Ruhaim%20Riyaz%20Watermark%20II.png" alt="Ruhaim Riyaz Logo Watermark" class="hero-logo-img">
+            <img src="assets/Logo/Ruhaim%20Riyaz%20Watermark%20II.png" alt="Ruhaim Riyaz Logo" class="hero-logo-img">
           </div>
 
-          <!-- Tagline directly below Logo -->
-          <p class="hero-tagline monochrome-gradient-text">
-            Photographer • Graphic Designer • Visual Storyteller
+          <p class="hero-tagline gradient-text">
+            Photographer · Graphic Designer · Visual Storyteller
           </p>
 
           <div class="hero-actions">
-            <a href="#photography" class="btn-mono-primary">
-              <span>PHOTOGRAPHY GALLERY</span>
+            <a href="#photography" class="btn-primary" id="hero-btn-photo">
+              <span>View Photography</span>
               <i data-lucide="camera"></i>
             </a>
-            <a href="#graphic-design" class="btn-mono-outline">
-              <span>GRAPHIC DESIGN STUDIO</span>
+            <a href="#graphic-design" class="btn-outline" id="hero-btn-design">
+              <span>Design Studio</span>
               <i data-lucide="layout-grid"></i>
             </a>
           </div>
         </div>
+
+        <div class="hero-scroll-hint">
+          <span>Scroll</span>
+          <div class="scroll-line"></div>
+        </div>
       </section>
 
-      <!-- =================================================================== -->
-      <!-- SECTION 1: SEPARATE PHOTOGRAPHY GALLERY (WITHOUT TITLES) -->
-      <!-- =================================================================== -->
+
+      <!-- ═══════════════════════════════════════════════════════════════ -->
+      <!-- FEATURED WORK — Photography (3D Floating Cards)               -->
+      <!-- ═══════════════════════════════════════════════════════════════ -->
+      <div class="section-divider"></div>
+
       <section class="section-container" id="photography">
-        <div class="section-header">
-          <h2 class="section-title monochrome-gradient-text">PHOTOGRAPHY ARCHIVE</h2>
-          <p class="section-subtitle">Photographed by Ruhaim Riyaz (Instagram: Visuals by Ruhaim) - Event Photography, Creative Visual Content & Storytelling.</p>
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow">Photography Archive</span>
+          <h2 class="section-title gradient-text">Visual Stories</h2>
+          <p class="section-subtitle">Event photography, creative visual content & storytelling — captured by Ruhaim Riyaz.</p>
         </div>
 
-        <!-- Filter Tab Buttons for Photography -->
-        <div class="portfolio-tab-nav" id="photo-tab-nav">
-          <button class="tab-btn active" data-filter="all">All Photography</button>
+        <!-- Filter Tabs -->
+        <div class="portfolio-tab-nav reveal-up" id="photo-tab-nav">
+          <button class="tab-btn active" data-filter="all">All</button>
           <button class="tab-btn" data-filter="weddings">Weddings & Macro</button>
           <button class="tab-btn" data-filter="cultural">Cultural Motion</button>
           <button class="tab-btn" data-filter="sports">Sports Action</button>
           <button class="tab-btn" data-filter="landscapes">Landscapes</button>
         </div>
 
-        <!-- Photography Cards Grid -->
+        <!-- Photography 3D Cards Grid -->
         <div class="portfolio-grid" id="photography-grid">
           
-          <!-- Photo 1 -->
-          <div class="portfolio-card photo-card" data-category="weddings" data-desc="High luxury bridal detail photography showcasing intricate henna hand art, traditional gold jewelry, and embroidered ivory attire." data-image="assets/Photographs/IMG_2184.jpg" data-photographer="Ruhaim Riyaz">
+          <div class="portfolio-card photo-card reveal-scale" data-category="weddings" data-desc="High luxury bridal detail photography showcasing intricate henna hand art, traditional gold jewelry, and embroidered ivory attire." data-image="assets/Photographs/IMG_2184.jpg" data-photographer="Ruhaim Riyaz">
             <div class="card-media-wrapper">
-              <img src="assets/Photographs/IMG_2184.jpg" alt="Photographed by Ruhaim Riyaz">
+              <img src="assets/Photographs/IMG_2184.jpg" alt="Photographed by Ruhaim Riyaz" loading="lazy">
             </div>
           </div>
 
-          <!-- Photo 2 -->
-          <div class="portfolio-card photo-card" data-category="landscapes" data-desc="Fiery sunset ocean seascape over rolling waves and cloudscape." data-image="assets/Photographs/IMG_2180.jpg" data-photographer="Ruhaim Riyaz">
+          <div class="portfolio-card photo-card reveal-scale" data-category="landscapes" data-desc="Fiery sunset ocean seascape over rolling waves and cloudscape." data-image="assets/Photographs/IMG_2180.jpg" data-photographer="Ruhaim Riyaz">
             <div class="card-media-wrapper">
-              <img src="assets/Photographs/IMG_2180.jpg" alt="Photographed by Ruhaim Riyaz">
+              <img src="assets/Photographs/IMG_2180.jpg" alt="Photographed by Ruhaim Riyaz" loading="lazy">
             </div>
           </div>
 
-          <!-- Photo 3 -->
-          <div class="portfolio-card photo-card" data-category="landscapes" data-desc="Dusk silhouette of beachside ice cream vendor against violet and orange evening sky." data-image="assets/Photographs/IMG_2181.jpg" data-photographer="Ruhaim Riyaz">
+          <div class="portfolio-card photo-card reveal-scale" data-category="landscapes" data-desc="Dusk silhouette of beachside ice cream vendor against violet and orange evening sky." data-image="assets/Photographs/IMG_2181.jpg" data-photographer="Ruhaim Riyaz">
             <div class="card-media-wrapper">
-              <img src="assets/Photographs/IMG_2181.jpg" alt="Photographed by Ruhaim Riyaz">
+              <img src="assets/Photographs/IMG_2181.jpg" alt="Photographed by Ruhaim Riyaz" loading="lazy">
             </div>
           </div>
 
-          <!-- Photo 4 -->
-          <div class="portfolio-card photo-card" data-category="cultural" data-desc="Dynamic motion blur of traditional soloist dancer performance near stone pillar." data-image="assets/Photographs/IMG_2182.jpg" data-photographer="Ruhaim Riyaz">
+          <div class="portfolio-card photo-card reveal-scale" data-category="cultural" data-desc="Dynamic motion blur of traditional soloist dancer performance near stone pillar." data-image="assets/Photographs/IMG_2182.jpg" data-photographer="Ruhaim Riyaz">
             <div class="card-media-wrapper">
-              <img src="assets/Photographs/IMG_2182.jpg" alt="Photographed by Ruhaim Riyaz">
+              <img src="assets/Photographs/IMG_2182.jpg" alt="Photographed by Ruhaim Riyaz" loading="lazy">
             </div>
           </div>
 
-          <!-- Photo 5 -->
-          <div class="portfolio-card photo-card" data-category="cultural" data-desc="Ethereal long exposure light trails of traditional dancers in motion." data-image="assets/Photographs/IMG_2183.jpg" data-photographer="Ruhaim Riyaz">
+          <div class="portfolio-card photo-card reveal-scale" data-category="cultural" data-desc="Ethereal long exposure light trails of traditional dancers in motion." data-image="assets/Photographs/IMG_2183.jpg" data-photographer="Ruhaim Riyaz">
             <div class="card-media-wrapper">
-              <img src="assets/Photographs/IMG_2183.jpg" alt="Photographed by Ruhaim Riyaz">
+              <img src="assets/Photographs/IMG_2183.jpg" alt="Photographed by Ruhaim Riyaz" loading="lazy">
             </div>
           </div>
 
-          <!-- Photo 6 -->
-          <div class="portfolio-card photo-card" data-category="cultural" data-desc="Monochrome fine art portrait." data-image="assets/Photographs/IMG_2185.jpg" data-photographer="Ruhaim Riyaz">
+          <div class="portfolio-card photo-card reveal-scale" data-category="cultural" data-desc="Monochrome fine art portrait." data-image="assets/Photographs/IMG_2185.jpg" data-photographer="Ruhaim Riyaz">
             <div class="card-media-wrapper">
-              <img src="assets/Photographs/IMG_2185.jpg" alt="Photographed by Ruhaim Riyaz">
+              <img src="assets/Photographs/IMG_2185.jpg" alt="Photographed by Ruhaim Riyaz" loading="lazy">
             </div>
           </div>
 
-          <!-- Photo 7 -->
-          <div class="portfolio-card photo-card" data-category="cultural" data-desc="Atmospheric fine art photography highlighting depth and shadow." data-image="assets/Photographs/IMG_2186.jpg" data-photographer="Ruhaim Riyaz">
+          <div class="portfolio-card photo-card reveal-scale" data-category="cultural" data-desc="Atmospheric fine art photography highlighting depth and shadow." data-image="assets/Photographs/IMG_2186.jpg" data-photographer="Ruhaim Riyaz">
             <div class="card-media-wrapper">
-              <img src="assets/Photographs/IMG_2186.jpg" alt="Photographed by Ruhaim Riyaz">
+              <img src="assets/Photographs/IMG_2186.jpg" alt="Photographed by Ruhaim Riyaz" loading="lazy">
             </div>
           </div>
 
-          <!-- Photo 8 -->
-          <div class="portfolio-card photo-card" data-category="sports" data-desc="High speed sports and action photo capturing focus." data-image="assets/Photographs/IMG_2187.jpg" data-photographer="Ruhaim Riyaz">
+          <div class="portfolio-card photo-card reveal-scale" data-category="sports" data-desc="High speed sports and action photo capturing focus." data-image="assets/Photographs/IMG_2187.jpg" data-photographer="Ruhaim Riyaz">
             <div class="card-media-wrapper">
-              <img src="assets/Photographs/IMG_2187.jpg" alt="Photographed by Ruhaim Riyaz">
+              <img src="assets/Photographs/IMG_2187.jpg" alt="Photographed by Ruhaim Riyaz" loading="lazy">
             </div>
           </div>
 
-          <!-- Photo 9 -->
-          <div class="portfolio-card photo-card" data-category="sports" data-desc="Official Isipathana rugby sports coverage." data-image="assets/Photographs/IMG_2188.jpg" data-photographer="Ruhaim Riyaz">
+          <div class="portfolio-card photo-card reveal-scale" data-category="sports" data-desc="Official Isipathana rugby sports coverage." data-image="assets/Photographs/IMG_2188.jpg" data-photographer="Ruhaim Riyaz">
             <div class="card-media-wrapper">
-              <img src="assets/Photographs/IMG_2188.jpg" alt="Photographed by Ruhaim Riyaz">
+              <img src="assets/Photographs/IMG_2188.jpg" alt="Photographed by Ruhaim Riyaz" loading="lazy">
             </div>
           </div>
 
-          <!-- Photo 10 -->
-          <div class="portfolio-card photo-card" data-category="cultural" data-desc="Cultural heritage performance art document." data-image="assets/Photographs/IMG_2189.jpg" data-photographer="Ruhaim Riyaz">
+          <div class="portfolio-card photo-card reveal-scale" data-category="cultural" data-desc="Cultural heritage performance art document." data-image="assets/Photographs/IMG_2189.jpg" data-photographer="Ruhaim Riyaz">
             <div class="card-media-wrapper">
-              <img src="assets/Photographs/IMG_2189.jpg" alt="Photographed by Ruhaim Riyaz">
+              <img src="assets/Photographs/IMG_2189.jpg" alt="Photographed by Ruhaim Riyaz" loading="lazy">
             </div>
           </div>
 
-          <!-- Photo 11 -->
-          <div class="portfolio-card photo-card" data-category="weddings" data-desc="Fine detail macro capture of luxury attire texture and embroidery." data-image="assets/Photographs/IMG_2190.jpg" data-photographer="Ruhaim Riyaz">
+          <div class="portfolio-card photo-card reveal-scale" data-category="weddings" data-desc="Fine detail macro capture of luxury attire texture and embroidery." data-image="assets/Photographs/IMG_2190.jpg" data-photographer="Ruhaim Riyaz">
             <div class="card-media-wrapper">
-              <img src="assets/Photographs/IMG_2190.jpg" alt="Photographed by Ruhaim Riyaz">
+              <img src="assets/Photographs/IMG_2190.jpg" alt="Photographed by Ruhaim Riyaz" loading="lazy">
             </div>
           </div>
 
         </div>
       </section>
 
-      <!-- =================================================================== -->
-      <!-- SECTION 2: SEPARATE GRAPHIC DESIGN STUDIO (WITHOUT TITLES) -->
-      <!-- =================================================================== -->
+
+      <!-- ═══════════════════════════════════════════════════════════════ -->
+      <!-- GRAPHIC DESIGN STUDIO (3D Wall Gallery)                       -->
+      <!-- ═══════════════════════════════════════════════════════════════ -->
+      <div class="section-divider"></div>
+
       <section class="section-container" id="graphic-design">
-        <div class="section-header">
-          <h2 class="section-title monochrome-gradient-text">GRAPHIC DESIGN STUDIO</h2>
-          <p class="section-subtitle">Created by Ruhaim Riyaz - Custom Event Posters, Branding Systems & Meaningful Designs.</p>
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow">Design Studio</span>
+          <h2 class="section-title gradient-text">Creative Works</h2>
+          <p class="section-subtitle">Custom event posters, branding systems & meaningful designs — crafted by Ruhaim Riyaz.</p>
         </div>
 
-        <!-- Filter Tab Buttons for Graphic Design -->
-        <div class="portfolio-tab-nav" id="graphic-tab-nav">
-          <button class="tab-btn active" data-filter="all">All Graphic Works</button>
+        <!-- Filter Tabs -->
+        <div class="portfolio-tab-nav reveal-up" id="graphic-tab-nav">
+          <button class="tab-btn active" data-filter="all">All Works</button>
           <button class="tab-btn" data-filter="posters">Event Posters</button>
-          <button class="tab-btn" data-filter="campaigns">Marketing Campaigns</button>
+          <button class="tab-btn" data-filter="campaigns">Campaigns</button>
           <button class="tab-btn" data-filter="branding">Branding & Albums</button>
         </div>
 
-        <!-- Graphic Design Cards Grid -->
-        <div class="portfolio-grid" id="graphic-grid">
-          
-          <!-- Graphic Item 1 -->
-          <div class="portfolio-card graphic-card" data-category="posters" data-desc="Official sports and event poster artwork created for Isipathana College." data-image="assets/Graphic%20designs/Isipathana_Ruhaim_Dematagoda.jpg" data-designer="Ruhaim Riyaz">
-            <div class="card-media-wrapper">
-              <img src="assets/Graphic%20designs/Isipathana_Ruhaim_Dematagoda.jpg" alt="Designed by Ruhaim Riyaz">
+        <!-- 3D Wall Gallery -->
+        <div class="gallery-3d-wall">
+          <div class="gallery-wall-inner" id="graphic-grid">
+            
+            <div class="gallery-wall-item portfolio-card graphic-card reveal-scale" data-category="posters" data-desc="Official sports and event poster artwork created for Isipathana College." data-image="assets/Graphic%20designs/Isipathana_Ruhaim_Dematagoda.jpg" data-designer="Ruhaim Riyaz">
+              <div class="card-media-wrapper">
+                <img src="assets/Graphic%20designs/Isipathana_Ruhaim_Dematagoda.jpg" alt="Designed by Ruhaim Riyaz" loading="lazy">
+              </div>
             </div>
-          </div>
 
-          <!-- Graphic Item 2 -->
-          <div class="portfolio-card graphic-card" data-category="campaigns" data-desc="Event banner and graphic identity poster designed for Green Walk 2025." data-image="assets/Graphic%20designs/Green%20Walk%202025.jpg" data-designer="Ruhaim Riyaz">
-            <div class="card-media-wrapper">
-              <img src="assets/Graphic%20designs/Green%20Walk%202025.jpg" alt="Designed by Ruhaim Riyaz">
+            <div class="gallery-wall-item portfolio-card graphic-card reveal-scale" data-category="campaigns" data-desc="Event banner and graphic identity poster designed for Green Walk 2025." data-image="assets/Graphic%20designs/Green%20Walk%202025.jpg" data-designer="Ruhaim Riyaz">
+              <div class="card-media-wrapper">
+                <img src="assets/Graphic%20designs/Green%20Walk%202025.jpg" alt="Designed by Ruhaim Riyaz" loading="lazy">
+              </div>
             </div>
-          </div>
 
-          <!-- Graphic Item 3 -->
-          <div class="portfolio-card graphic-card" data-category="branding" data-desc="Album launch cover art and promo poster design for Nethinethra '23." data-image="assets/Graphic%20designs/Nethinethra%2023%20Album%20Out%20Poster.jpg" data-designer="Ruhaim Riyaz">
-            <div class="card-media-wrapper">
-              <img src="assets/Graphic%20designs/Nethinethra%2023%20Album%20Out%20Poster.jpg" alt="Designed by Ruhaim Riyaz">
+            <div class="gallery-wall-item portfolio-card graphic-card reveal-scale" data-category="branding" data-desc="Album launch cover art and promo poster design for Nethinethra '23." data-image="assets/Graphic%20designs/Nethinethra%2023%20Album%20Out%20Poster.jpg" data-designer="Ruhaim Riyaz">
+              <div class="card-media-wrapper">
+                <img src="assets/Graphic%20designs/Nethinethra%2023%20Album%20Out%20Poster.jpg" alt="Designed by Ruhaim Riyaz" loading="lazy">
+              </div>
             </div>
-          </div>
 
-          <!-- Graphic Item 4 -->
-          <div class="portfolio-card graphic-card" data-category="campaigns" data-desc="Futuristic teaser poster artwork for OMG product campaign." data-image="assets/Graphic%20designs/OMG%20Coming%20Soon%20Final.jpg" data-designer="Ruhaim Riyaz">
-            <div class="card-media-wrapper">
-              <img src="assets/Graphic%20designs/OMG%20Coming%20Soon%20Final.jpg" alt="Designed by Ruhaim Riyaz">
+            <div class="gallery-wall-item portfolio-card graphic-card reveal-scale" data-category="campaigns" data-desc="Futuristic teaser poster artwork for OMG product campaign." data-image="assets/Graphic%20designs/OMG%20Coming%20Soon%20Final.jpg" data-designer="Ruhaim Riyaz">
+              <div class="card-media-wrapper">
+                <img src="assets/Graphic%20designs/OMG%20Coming%20Soon%20Final.jpg" alt="Designed by Ruhaim Riyaz" loading="lazy">
+              </div>
             </div>
-          </div>
 
-          <!-- Graphic Item 5 -->
-          <div class="portfolio-card graphic-card" data-category="campaigns" data-desc="Dynamic recruitment and membership campaign artwork." data-image="assets/Graphic%20designs/Membership%20Drive.jpg" data-designer="Ruhaim Riyaz">
-            <div class="card-media-wrapper">
-              <img src="assets/Graphic%20designs/Membership%20Drive.jpg" alt="Designed by Ruhaim Riyaz">
+            <div class="gallery-wall-item portfolio-card graphic-card reveal-scale" data-category="campaigns" data-desc="Dynamic recruitment and membership campaign artwork." data-image="assets/Graphic%20designs/Membership%20Drive.jpg" data-designer="Ruhaim Riyaz">
+              <div class="card-media-wrapper">
+                <img src="assets/Graphic%20designs/Membership%20Drive.jpg" alt="Designed by Ruhaim Riyaz" loading="lazy">
+              </div>
             </div>
-          </div>
 
-          <!-- Graphic Item 6 -->
-          <div class="portfolio-card graphic-card" data-category="branding" data-desc="Brand graphic composition." data-image="assets/Graphic%20designs/Artwork%20(2).jpg" data-designer="Ruhaim Riyaz">
-            <div class="card-media-wrapper">
-              <img src="assets/Graphic%20designs/Artwork%20(2).jpg" alt="Designed by Ruhaim Riyaz">
+            <div class="gallery-wall-item portfolio-card graphic-card reveal-scale" data-category="branding" data-desc="Brand graphic composition." data-image="assets/Graphic%20designs/Artwork%20(2).jpg" data-designer="Ruhaim Riyaz">
+              <div class="card-media-wrapper">
+                <img src="assets/Graphic%20designs/Artwork%20(2).jpg" alt="Designed by Ruhaim Riyaz" loading="lazy">
+              </div>
             </div>
-          </div>
 
-          <!-- Graphic Item 7 -->
-          <div class="portfolio-card graphic-card" data-category="branding" data-desc="Brand graphic composition." data-image="assets/Graphic%20designs/Artwork%20(3).jpg" data-designer="Ruhaim Riyaz">
-            <div class="card-media-wrapper">
-              <img src="assets/Graphic%20designs/Artwork%20(3).jpg" alt="Designed by Ruhaim Riyaz">
+            <div class="gallery-wall-item portfolio-card graphic-card reveal-scale" data-category="branding" data-desc="Brand graphic composition." data-image="assets/Graphic%20designs/Artwork%20(3).jpg" data-designer="Ruhaim Riyaz">
+              <div class="card-media-wrapper">
+                <img src="assets/Graphic%20designs/Artwork%20(3).jpg" alt="Designed by Ruhaim Riyaz" loading="lazy">
+              </div>
             </div>
-          </div>
 
-          <!-- Graphic Item 8 -->
-          <div class="portfolio-card graphic-card" data-category="branding" data-desc="Brand graphic composition." data-image="assets/Graphic%20designs/Artwork%20(4).jpg" data-designer="Ruhaim Riyaz">
-            <div class="card-media-wrapper">
-              <img src="assets/Graphic%20designs/Artwork%20(4).jpg" alt="Designed by Ruhaim Riyaz">
+            <div class="gallery-wall-item portfolio-card graphic-card reveal-scale" data-category="branding" data-desc="Brand graphic composition." data-image="assets/Graphic%20designs/Artwork%20(4).jpg" data-designer="Ruhaim Riyaz">
+              <div class="card-media-wrapper">
+                <img src="assets/Graphic%20designs/Artwork%20(4).jpg" alt="Designed by Ruhaim Riyaz" loading="lazy">
+              </div>
             </div>
-          </div>
 
-          <!-- Graphic Item 9 -->
-          <div class="portfolio-card graphic-card" data-category="branding" data-desc="Brand graphic composition." data-image="assets/Graphic%20designs/Artwork%20(5).jpg" data-designer="Ruhaim Riyaz">
-            <div class="card-media-wrapper">
-              <img src="assets/Graphic%20designs/Artwork%20(5).jpg" alt="Designed by Ruhaim Riyaz">
+            <div class="gallery-wall-item portfolio-card graphic-card reveal-scale" data-category="branding" data-desc="Brand graphic composition." data-image="assets/Graphic%20designs/Artwork%20(5).jpg" data-designer="Ruhaim Riyaz">
+              <div class="card-media-wrapper">
+                <img src="assets/Graphic%20designs/Artwork%20(5).jpg" alt="Designed by Ruhaim Riyaz" loading="lazy">
+              </div>
             </div>
-          </div>
 
-          <!-- Graphic Item 10 -->
-          <div class="portfolio-card graphic-card" data-category="posters" data-desc="Graphic poster composition." data-image="assets/Graphic%20designs/Untitled-1.jpg" data-designer="Ruhaim Riyaz">
-            <div class="card-media-wrapper">
-              <img src="assets/Graphic%20designs/Untitled-1.jpg" alt="Designed by Ruhaim Riyaz">
+            <div class="gallery-wall-item portfolio-card graphic-card reveal-scale" data-category="posters" data-desc="Graphic poster composition." data-image="assets/Graphic%20designs/Untitled-1.jpg" data-designer="Ruhaim Riyaz">
+              <div class="card-media-wrapper">
+                <img src="assets/Graphic%20designs/Untitled-1.jpg" alt="Designed by Ruhaim Riyaz" loading="lazy">
+              </div>
             </div>
-          </div>
 
-          <!-- Graphic Item 11 -->
-          <div class="portfolio-card graphic-card" data-category="posters" data-desc="Graphic poster composition." data-image="assets/Graphic%20designs/Untitled-1%20(2).jpg" data-designer="Ruhaim Riyaz">
-            <div class="card-media-wrapper">
-              <img src="assets/Graphic%20designs/Untitled-1%20(2).jpg" alt="Designed by Ruhaim Riyaz">
+            <div class="gallery-wall-item portfolio-card graphic-card reveal-scale" data-category="posters" data-desc="Graphic poster composition." data-image="assets/Graphic%20designs/Untitled-1%20(2).jpg" data-designer="Ruhaim Riyaz">
+              <div class="card-media-wrapper">
+                <img src="assets/Graphic%20designs/Untitled-1%20(2).jpg" alt="Designed by Ruhaim Riyaz" loading="lazy">
+              </div>
             </div>
-          </div>
 
-          <!-- Graphic Item 12 -->
-          <div class="portfolio-card graphic-card" data-category="posters" data-desc="Graphic poster composition." data-image="assets/Graphic%20designs/Untitled-1%20(3).jpg" data-designer="Ruhaim Riyaz">
-            <div class="card-media-wrapper">
-              <img src="assets/Graphic%20designs/Untitled-1%20(3).jpg" alt="Designed by Ruhaim Riyaz">
+            <div class="gallery-wall-item portfolio-card graphic-card reveal-scale" data-category="posters" data-desc="Graphic poster composition." data-image="assets/Graphic%20designs/Untitled-1%20(3).jpg" data-designer="Ruhaim Riyaz">
+              <div class="card-media-wrapper">
+                <img src="assets/Graphic%20designs/Untitled-1%20(3).jpg" alt="Designed by Ruhaim Riyaz" loading="lazy">
+              </div>
             </div>
-          </div>
 
-          <!-- Graphic Item 13 -->
-          <div class="portfolio-card graphic-card" data-category="posters" data-desc="Graphic poster composition." data-image="assets/Graphic%20designs/Untitled-1%20(4).jpg" data-designer="Ruhaim Riyaz">
-            <div class="card-media-wrapper">
-              <img src="assets/Graphic%20designs/Untitled-1%20(4).jpg" alt="Designed by Ruhaim Riyaz">
+            <div class="gallery-wall-item portfolio-card graphic-card reveal-scale" data-category="posters" data-desc="Graphic poster composition." data-image="assets/Graphic%20designs/Untitled-1%20(4).jpg" data-designer="Ruhaim Riyaz">
+              <div class="card-media-wrapper">
+                <img src="assets/Graphic%20designs/Untitled-1%20(4).jpg" alt="Designed by Ruhaim Riyaz" loading="lazy">
+              </div>
             </div>
-          </div>
 
-          <!-- Graphic Item 14 -->
-          <div class="portfolio-card graphic-card" data-category="posters" data-desc="Graphic poster composition." data-image="assets/Graphic%20designs/Untitled-1%20(5).jpg" data-designer="Ruhaim Riyaz">
-            <div class="card-media-wrapper">
-              <img src="assets/Graphic%20designs/Untitled-1%20(5).jpg" alt="Designed by Ruhaim Riyaz">
+            <div class="gallery-wall-item portfolio-card graphic-card reveal-scale" data-category="posters" data-desc="Graphic poster composition." data-image="assets/Graphic%20designs/Untitled-1%20(5).jpg" data-designer="Ruhaim Riyaz">
+              <div class="card-media-wrapper">
+                <img src="assets/Graphic%20designs/Untitled-1%20(5).jpg" alt="Designed by Ruhaim Riyaz" loading="lazy">
+              </div>
             </div>
-          </div>
 
+          </div>
         </div>
       </section>
 
-      <!-- About Section -->
+
+      <!-- ═══════════════════════════════════════════════════════════════ -->
+      <!-- ABOUT — 3D Timeline + Glass Achievement Panels                -->
+      <!-- ═══════════════════════════════════════════════════════════════ -->
+      <div class="section-divider"></div>
+
       <section class="section-container" id="about">
-        <div class="section-header">
-          <h2 class="section-title monochrome-gradient-text">About Me</h2>
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow">The Artist</span>
+          <h2 class="section-title gradient-text">About Me</h2>
         </div>
 
         <div class="about-grid">
-          <!-- 3D Parallax Tilt Card featuring Ruhaim's Portrait -->
-          <div class="about-card-3d-wrapper">
+          <!-- 3D Portrait Card -->
+          <div class="about-card-3d-wrapper reveal-scale">
             <div class="about-card-3d" id="about-card">
               <div class="about-img-container">
                 <img src="assets/Ruhaim%20Riyaz/IMG_0425.JPG" alt="Ruhaim Riyaz Portrait" id="avatar-img">
                 <div class="about-card-overlay">
                   <h3 class="about-name">Ruhaim Riyaz</h3>
-                  <p class="about-role">Photographer • Graphic Designer (Instagram: @ruhaim.jpeg)</p>
+                  <p class="about-role">Photographer · Graphic Designer</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Bio Content -->
-          <div class="about-info-content">
+          <!-- Bio & Info -->
+          <div class="about-info-content reveal-up">
             <p class="about-bio-text">
-              Hi, I’m <strong>Ruhaim Riyaz</strong>, a photographer and graphic designer based in Sri Lanka. I specialize in event photography, creative visual content, and graphic design. My goal is to tell stories through powerful visuals and meaningful designs. (Instagram Handle: <strong>Visuals by Ruhaim / @ruhaim.jpeg</strong>).
+              Hi, I'm <strong>Ruhaim Riyaz</strong>, a photographer and graphic designer based in Sri Lanka. I specialize in event photography, creative visual content, and graphic design. My goal is to tell stories through powerful visuals and meaningful designs.
             </p>
 
             <div class="about-details-list">
               <div class="detail-item">
-                <span class="detail-label">Photographer Name</span>
+                <span class="detail-label">Photographer</span>
                 <span class="detail-value">Ruhaim Riyaz</span>
               </div>
               <div class="detail-item">
-                <span class="detail-label">Instagram Handle</span>
-                <span class="detail-value">Visuals by Ruhaim (@ruhaim.jpeg)</span>
+                <span class="detail-label">Instagram</span>
+                <span class="detail-value">@ruhaim.jpeg</span>
               </div>
               <div class="detail-item">
                 <span class="detail-label">Location</span>
                 <span class="detail-value">Sri Lanka</span>
               </div>
               <div class="detail-item">
-                <span class="detail-label">Client Status</span>
+                <span class="detail-label">Status</span>
                 <span class="detail-value">Available for Bookings</span>
               </div>
             </div>
 
-            <div class="stats-bar">
-              <div>
-                <div class="stat-num">65+</div>
-                <div class="stat-desc">Events Covered</div>
+            <!-- Floating Glass Achievement Panels -->
+            <div class="achievements-grid">
+              <div class="achievement-panel">
+                <div class="achievement-number">65+</div>
+                <div class="achievement-label">Events Covered</div>
               </div>
-              <div>
-                <div class="stat-num">90+</div>
-                <div class="stat-desc">Graphic Designs</div>
+              <div class="achievement-panel">
+                <div class="achievement-number">90+</div>
+                <div class="achievement-label">Graphic Designs</div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3D Scroll Timeline -->
+        <div class="about-timeline reveal-up" id="about-timeline">
+          <div class="timeline-track" id="timeline-track">
+            <div class="timeline-item">
+              <div class="timeline-year">2022</div>
+              <div class="timeline-label">The Beginning</div>
+              <div class="timeline-desc">Started capturing moments through the lens — discovered a passion for visual storytelling and event photography.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2023</div>
+              <div class="timeline-label">Design Evolution</div>
+              <div class="timeline-desc">Expanded into graphic design — creating event posters, branding systems, and visual identities for clients.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2024</div>
+              <div class="timeline-label">Growing Portfolio</div>
+              <div class="timeline-desc">Covered 50+ events, produced 70+ graphic designs, and established Visuals by Ruhaim as a recognized creative brand.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2025</div>
+              <div class="timeline-label">Present Day</div>
+              <div class="timeline-desc">Continuing to push creative boundaries with 65+ events covered and 90+ graphic designs delivered to clients across Sri Lanka.</div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Contact Section -->
+
+      <!-- ═══════════════════════════════════════════════════════════════ -->
+      <!-- CONTACT — Glassmorphism + Floating Social Icons               -->
+      <!-- ═══════════════════════════════════════════════════════════════ -->
+      <div class="section-divider"></div>
+
       <section class="section-container" id="contact">
-        <div class="section-header">
-          <h2 class="section-title monochrome-gradient-text">GET IN TOUCH</h2>
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow">Let's Connect</span>
+          <h2 class="section-title gradient-text">Get in Touch</h2>
           <p class="section-subtitle">Book Ruhaim Riyaz for event photography, creative visual content, or graphic design projects.</p>
         </div>
 
-        <div class="contact-grid">
-          <!-- Info & Social Handles -->
+        <div class="contact-grid reveal-scale">
           <div class="contact-info-card">
-            <h3 class="card-title">CONNECT WITH RUHAIM</h3>
+            <h3 class="card-title">Connect with Ruhaim</h3>
             <p class="about-bio-text">Reach out via official social profiles or send a direct message for bookings and commissions.</p>
 
             <div class="social-handles-list">
@@ -403,7 +457,7 @@
                 </div>
                 <div>
                   <div class="social-title">Photography Instagram</div>
-                  <div style="font-size:0.8rem; color:var(--text-muted);">Visuals by Ruhaim (@ruhaim.jpeg)</div>
+                  <div style="font-size:0.75rem; color:var(--text-tertiary);">@ruhaim.jpeg</div>
                 </div>
               </a>
 
@@ -413,8 +467,8 @@
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
                 </div>
                 <div>
-                  <div class="social-title">Photography Facebook</div>
-                  <div style="font-size:0.8rem; color:var(--text-muted);">Ruhaim Riyaz Photography</div>
+                  <div class="social-title">Facebook</div>
+                  <div style="font-size:0.75rem; color:var(--text-tertiary);">Ruhaim Riyaz Photography</div>
                 </div>
               </a>
 
@@ -424,8 +478,8 @@
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
                 </div>
                 <div>
-                  <div class="social-title">LinkedIn Profile</div>
-                  <div style="font-size:0.8rem; color:var(--text-muted);">in/ruhaim-riyaz</div>
+                  <div class="social-title">LinkedIn</div>
+                  <div style="font-size:0.75rem; color:var(--text-tertiary);">in/ruhaim-riyaz</div>
                 </div>
               </a>
 
@@ -436,18 +490,18 @@
                 </div>
                 <div>
                   <div class="social-title">WhatsApp</div>
-                  <div style="font-size:0.8rem; color:var(--text-muted);">+94 75 215 4499</div>
+                  <div style="font-size:0.75rem; color:var(--text-tertiary);">+94 75 215 4499</div>
                 </div>
               </a>
 
-              <!-- Direct Email -->
+              <!-- Email -->
               <a href="mailto:mruhaimriyaz@gmail.com" class="social-item">
                 <div class="social-icon-box">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                 </div>
                 <div>
-                  <div class="social-title">Direct Email</div>
-                  <div style="font-size:0.8rem; color:var(--text-muted);">mruhaimriyaz@gmail.com</div>
+                  <div class="social-title">Email</div>
+                  <div style="font-size:0.75rem; color:var(--text-tertiary);">mruhaimriyaz@gmail.com</div>
                 </div>
               </a>
             </div>
@@ -457,17 +511,17 @@
 
     </main>
 
-    <!-- Footer with Clean Logo (No Box Container) -->
+    <!-- Footer -->
     <footer class="footer">
       <div class="footer-logo-wrapper">
         <img src="assets/Logo/Ruhaim%20Riyaz%20Watermark%20II.png" alt="Ruhaim Riyaz Logo" class="footer-logo-img">
       </div>
-      <p class="footer-copy">© 2026 Visual by Ruhaim. All Rights Reserved.</p>
+      <p class="footer-copy">© 2026 Visuals by Ruhaim. All Rights Reserved.</p>
     </footer>
 
   </div>
 
-  <!-- Lightbox Modal Component with Official Intellectual Property Notice -->
+  <!-- Lightbox Modal -->
   <div class="modal-overlay" id="lightbox-modal">
     <div class="modal-content-container">
       <button class="modal-close-btn" id="modal-close"><i data-lucide="x"></i></button>
@@ -479,10 +533,10 @@
           <span class="modal-category" id="modal-category">CATEGORY</span>
           <h3 class="modal-title" id="modal-title"></h3>
           <p class="modal-description" id="modal-desc">Description</p>
-          <p class="modal-credit" id="modal-credit" style="color: var(--accent-white); font-weight: 700; margin-bottom: 1rem;"></p>
+          <p class="modal-credit" id="modal-credit"></p>
           
-          <!-- Exact Intellectual Property Notice (Shown ONLY for Photography) -->
-          <div class="ip-notice-box" id="ip-notice-box" style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-liquid); padding: 0.85rem; border-radius: 8px; margin-bottom: 1.25rem; font-size: 0.72rem; line-height: 1.5; color: var(--text-muted);">
+          <!-- IP Notice (Photography only) -->
+          <div class="ip-notice-box" id="ip-notice-box" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); padding: 0.85rem; border-radius: 12px; margin-bottom: 1.25rem; font-size: 0.72rem; line-height: 1.5; color: var(--text-secondary);">
             <div style="color: #FFFFFF; font-weight: 700; margin-bottom: 0.35rem;">© Ruhaim Riyaz. All Rights Reserved.</div>
             This photograph is the intellectual property of Ruhaim Riyaz. Unauthorized use, reproduction, editing, redistribution, publication, or AI training is prohibited without prior written permission.
           </div>
@@ -495,11 +549,10 @@
     </div>
   </div>
 
-  <!-- JavaScript Main Application Script -->
+  <!-- JavaScript -->
   <script src="main.js"></script>
 
   <script>
-    // Initialize Lucide icons
     lucide.createIcons();
   </script>
 </body>
