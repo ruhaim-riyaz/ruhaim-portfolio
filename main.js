@@ -180,10 +180,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     animate();
 
+    let lastWindowWidth = window.innerWidth;
     window.addEventListener('resize', () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      if (Math.abs(window.innerWidth - lastWindowWidth) > 5) {
+        lastWindowWidth = window.innerWidth;
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      }
     });
   }
 
@@ -389,17 +393,24 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ------------------------------------------------------------------------
    * 9. ACTIVE NAVBAR LINK HIGHLIGHT ON SCROLL
    * ------------------------------------------------------------------------ */
-  const sections = document.querySelectorAll('section');
+  const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
 
   window.addEventListener('scroll', () => {
     let currentSection = '';
-    sections.forEach(sec => {
-      const sectionTop = sec.offsetTop - 120;
-      if (window.scrollY >= sectionTop) {
-        currentSection = sec.getAttribute('id');
-      }
-    });
+    const scrollPos = window.scrollY || window.pageYOffset;
+    const isBottom = (window.innerHeight + Math.round(scrollPos)) >= document.body.offsetHeight - 50;
+
+    if (isBottom) {
+      currentSection = 'contact';
+    } else {
+      sections.forEach(sec => {
+        const sectionTop = sec.offsetTop - 140;
+        if (scrollPos >= sectionTop) {
+          currentSection = sec.getAttribute('id');
+        }
+      });
+    }
 
     navLinks.forEach(link => {
       link.classList.remove('active');
@@ -422,9 +433,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isActive) {
         navContainer.classList.remove('active');
         navToggle.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
       } else {
         navContainer.classList.add('active');
         navToggle.classList.add('active');
+        navToggle.setAttribute('aria-expanded', 'true');
       }
     });
 
@@ -434,6 +447,7 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', () => {
         navContainer.classList.remove('active');
         navToggle.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
       });
     });
 
@@ -442,6 +456,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!navContainer.contains(e.target) && !navToggle.contains(e.target)) {
         navContainer.classList.remove('active');
         navToggle.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
       }
     });
   }
@@ -474,7 +489,7 @@ document.addEventListener('DOMContentLoaded', () => {
       promise.then(() => {
         isAudioStarted = true;
       }).catch(err => {
-        // Autoplay policy prevented immediate unmuted playback until first interaction
+        // Autoplay policy fallback
       });
     }
   }
@@ -483,11 +498,13 @@ document.addEventListener('DOMContentLoaded', () => {
   forcePlayAudio();
   window.addEventListener('load', forcePlayAudio);
 
-  // Attach to all user interaction events so the audio plays instantly on first click, tap, scroll, or movement
-  const interactionEvents = ['click', 'touchstart', 'touchend', 'pointerdown', 'mousemove', 'scroll', 'keydown', 'focus'];
+  // Attach to user interaction events for initial play
+  const interactionEvents = ['click', 'touchstart', 'touchend', 'pointerdown', 'keydown'];
 
   function handleUserInteraction() {
-    forcePlayAudio();
+    if (!isAudioStarted) {
+      forcePlayAudio();
+    }
     if (isAudioStarted && !bgAudio.paused) {
       interactionEvents.forEach(evt => window.removeEventListener(evt, handleUserInteraction, { capture: true }));
     }
