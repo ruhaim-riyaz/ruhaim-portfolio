@@ -563,7 +563,7 @@ document.addEventListener('DOMContentLoaded', () => {
       totalViews: 0,
       uniqueVisitors: 0,
       photoOpens: 0,
-      sectionViews: { hero: 0, photography: 0, 'graphic-design': 0, about: 0, contact: 0 },
+      sectionViews: { hero: 0, about: 0, experience: 0, achievements: 0, 'featured-projects': 0, photography: 0, 'graphic-design': 0, contact: 0 },
       logs: []
     };
   }
@@ -788,9 +788,12 @@ document.addEventListener('DOMContentLoaded', () => {
       popList.innerHTML = '';
       const sectionNames = {
         hero: 'Home Hero Section',
-        photography: 'Photography Gallery',
+        about: 'Personal Introduction',
+        experience: 'Experience',
+        achievements: 'Achievements',
+        'featured-projects': 'Featured Projects',
+        photography: 'Photography Archive',
         'graphic-design': 'Graphic Design Studio',
-        about: 'About Ruhaim',
         contact: 'Contact & Booking'
       };
 
