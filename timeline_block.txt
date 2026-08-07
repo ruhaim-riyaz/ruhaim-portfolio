@@ -1,0 +1,269 @@
+        <div class="timeline-container">
+          <!-- Vertical Line -->
+          <div class="timeline-line"></div>
+
+          <div class="timeline-item">
+            <div class="timeline-node active"><div class="pulse-dot"></div></div>
+            <div class="timeline-content timeline-thumb-content">
+              <div class="timeline-thumb">
+                <img src="assets/Achievements/Apprecitaion%20awrd%20for%20being%20a%20excutive%20commitie%20in%20the%20scince%20socity%20of%20isipathana%20college%20(1).JPG" alt="Achievement">
+              </div>
+              <div class="timeline-text">
+                <span class="timeline-label">Achievement</span>
+                <h3 class="timeline-value" style="font-size: 0.95rem; line-height: 1.4;">Apprecitaion awrd for being a excutive commitie in the scince socity of isipathana college (1)</h3>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-content timeline-thumb-content">
+              <div class="timeline-thumb">
+                <img src="assets/Achievements/Apprecitaion%20awrd%20for%20being%20a%20excutive%20commitie%20in%20the%20scince%20socity%20of%20isipathana%20college.JPG" alt="Achievement">
+              </div>
+              <div class="timeline-text">
+                <span class="timeline-label">Achievement</span>
+                <h3 class="timeline-value" style="font-size: 0.95rem; line-height: 1.4;">Apprecitaion awrd for being a excutive commitie in the scince socity of isipathana college</h3>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-content timeline-thumb-content">
+              <div class="timeline-thumb">
+                <img src="assets/Achievements/DAMPAL%20Seya%202025%20the%20photography%20day%20of%20dharmapala%20vidayalayta%20awrded%20for%20photography%20(1).JPG" alt="Achievement">
+              </div>
+              <div class="timeline-text">
+                <span class="timeline-label">Achievement</span>
+                <h3 class="timeline-value" style="font-size: 0.95rem; line-height: 1.4;">DAMPAL Seya 2025 the photography day of dharmapala vidayalayta awrded for photography (1)</h3>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-content timeline-thumb-content">
+              <div class="timeline-thumb">
+                <img src="assets/Achievements/DAMPAL%20Seya%202025%20the%20photography%20day%20of%20dharmapala%20vidayalayta%20awrded%20for%20photography%20(2).JPG" alt="Achievement">
+              </div>
+              <div class="timeline-text">
+                <span class="timeline-label">Achievement</span>
+                <h3 class="timeline-value" style="font-size: 0.95rem; line-height: 1.4;">DAMPAL Seya 2025 the photography day of dharmapala vidayalayta awrded for photography (2)</h3>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-content timeline-thumb-content">
+              <div class="timeline-thumb">
+                <img src="assets/Achievements/DAMPAL%20Seya%202025%20the%20photography%20day%20of%20dharmapala%20vidayalayta%20awrded%20for%20photography%20(3).JPG" alt="Achievement">
+              </div>
+              <div class="timeline-text">
+                <span class="timeline-label">Achievement</span>
+                <h3 class="timeline-value" style="font-size: 0.95rem; line-height: 1.4;">DAMPAL Seya 2025 the photography day of dharmapala vidayalayta awrded for photography (3)</h3>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-content timeline-thumb-content">
+              <div class="timeline-thumb">
+                <img src="assets/Achievements/DAMPAL%20Seya%202025%20the%20photography%20day%20of%20dharmapala%20vidayalayta%20awrded%20for%20photography.JPG" alt="Achievement">
+              </div>
+              <div class="timeline-text">
+                <span class="timeline-label">Achievement</span>
+                <h3 class="timeline-value" style="font-size: 0.95rem; line-height: 1.4;">DAMPAL Seya 2025 the photography day of dharmapala vidayalayta awrded for photography</h3>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-content timeline-thumb-content">
+              <div class="timeline-thumb">
+                <img src="assets/Achievements/Eclat%2024%20the%20photography%20day%20mahanam%20girls%20college%20kandy%20awarded%20for%20photography.JPG" alt="Achievement">
+              </div>
+              <div class="timeline-text">
+                <span class="timeline-label">Achievement</span>
+                <h3 class="timeline-value" style="font-size: 0.95rem; line-height: 1.4;">Eclat 24 the photography day mahanam girls college kandy awarded for photography</h3>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-content timeline-thumb-content">
+              <div class="timeline-thumb">
+                <img src="assets/Achievements/Expozia%2024%20the%20media%20day%20of%20zahira%20college%20awarded%20in%20photography%20cateogry.JPG" alt="Achievement">
+              </div>
+              <div class="timeline-text">
+                <span class="timeline-label">Achievement</span>
+                <h3 class="timeline-value" style="font-size: 0.95rem; line-height: 1.4;">Expozia 24 the media day of zahira college awarded in photography cateogry</h3>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-content timeline-thumb-content">
+              <div class="timeline-thumb">
+                <img src="assets/Achievements/HE%20SARA%2024%20the%20media%20day%20competition%20of%20gothami%20balika%20vidayalaya%20awarded%20in%20photography.JPG" alt="Achievement">
+              </div>
+              <div class="timeline-text">
+                <span class="timeline-label">Achievement</span>
+                <h3 class="timeline-value" style="font-size: 0.95rem; line-height: 1.4;">HE SARA 24 the media day competition of gothami balika vidayalaya awarded in photography</h3>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-content timeline-thumb-content">
+              <div class="timeline-thumb">
+                <img src="assets/Achievements/Honored%20to%20receive%20the%20District%20Appreciation%20Award%20at%20the%20Invictus%20Inaugural%20District%20Conference%20of%20Leo%20District%20306%20D7.%20Grateful%20for%20the%20recognition%20and%20inspired%20to%20continue%20serving%20with%20dedicat.JPG" alt="Achievement">
+              </div>
+              <div class="timeline-text">
+                <span class="timeline-label">Achievement</span>
+                <h3 class="timeline-value" style="font-size: 0.95rem; line-height: 1.4;">Honored to receive the District Appreciation Award at the Invictus Inaugural District Conference of Leo District 306 D7. Grateful for the recognition and inspired to continue serving with dedicat</h3>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-content timeline-thumb-content">
+              <div class="timeline-thumb">
+                <img src="assets/Achievements/Kiriana%2025%20the%20photographic%20day%20of%20sirimavo%20banadaranayaka%20vidayalaya%20awrded%20for%20mbile%20cateogry%20(1).JPG" alt="Achievement">
+              </div>
+              <div class="timeline-text">
+                <span class="timeline-label">Achievement</span>
+                <h3 class="timeline-value" style="font-size: 0.95rem; line-height: 1.4;">Kiriana 25 the photographic day of sirimavo banadaranayaka vidayalaya awrded for mbile cateogry (1)</h3>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-content timeline-thumb-content">
+              <div class="timeline-thumb">
+                <img src="assets/Achievements/Kiriana%2025%20the%20photographic%20day%20of%20sirimavo%20banadaranayaka%20vidayalaya%20awrded%20for%20mbile%20cateogry.JPG" alt="Achievement">
+              </div>
+              <div class="timeline-text">
+                <span class="timeline-label">Achievement</span>
+                <h3 class="timeline-value" style="font-size: 0.95rem; line-height: 1.4;">Kiriana 25 the photographic day of sirimavo banadaranayaka vidayalaya awrded for mbile cateogry</h3>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-content timeline-thumb-content">
+              <div class="timeline-thumb">
+                <img src="assets/Achievements/Kiriana%2025%20the%20photographic%20day%20of%20sirimavo%20banadaranayaka%20vidayalaya%20awrded%20for%20monochrome%20cateogry.JPG" alt="Achievement">
+              </div>
+              <div class="timeline-text">
+                <span class="timeline-label">Achievement</span>
+                <h3 class="timeline-value" style="font-size: 0.95rem; line-height: 1.4;">Kiriana 25 the photographic day of sirimavo banadaranayaka vidayalaya awrded for monochrome cateogry</h3>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-content timeline-thumb-content">
+              <div class="timeline-thumb">
+                <img src="assets/Achievements/LOOM%20LENS%2025%20the%20all%20island%20photography%20competitin%20organised%20by%20the%20all%20isand%20photography%20association%20won%20prize%20in%20photography.JPG" alt="Achievement">
+              </div>
+              <div class="timeline-text">
+                <span class="timeline-label">Achievement</span>
+                <h3 class="timeline-value" style="font-size: 0.95rem; line-height: 1.4;">LOOM LENS 25 the all island photography competitin organised by the all isand photography association won prize in photography</h3>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-content timeline-thumb-content">
+              <div class="timeline-thumb">
+                <img src="assets/Achievements/NETHINETHARA%20The%20Media%20Day%20of%20Isipathana%20College%2C%20held%20on%20the%20fifth%20of%20May.%20Proud%20to%20secure%201st%20place%20in%20Graphic%20Design%20and%202nd%20place%20in%20Photography%20(Monochrome%20%26%20Street%20categories)..JPG" alt="Achievement">
+              </div>
+              <div class="timeline-text">
+                <span class="timeline-label">Achievement</span>
+                <h3 class="timeline-value" style="font-size: 0.95rem; line-height: 1.4;">NETHINETHARA The Media Day of Isipathana College, held on the fifth of May. Proud to secure 1st place in Graphic Design and 2nd place in Photography (Monochrome & Street categories).</h3>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-content timeline-thumb-content">
+              <div class="timeline-thumb">
+                <img src="assets/Achievements/NOOR%2024%20the%20islamic%20day%20of%20isipathana%20college%20awarded%20for%20%20oratory.JPG" alt="Achievement">
+              </div>
+              <div class="timeline-text">
+                <span class="timeline-label">Achievement</span>
+                <h3 class="timeline-value" style="font-size: 0.95rem; line-height: 1.4;">NOOR 24 the islamic day of isipathana college awarded for  oratory</h3>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-content timeline-thumb-content">
+              <div class="timeline-thumb">
+                <img src="assets/Achievements/NOOR%20%E2%80%9925%20The%20Islamic%20Day%20of%20Isipathana%20College%2C%20held%20on%20the%20second%20of%20May%202026%20Honoured%20to%20win%20a%20prize%20English%20Oratory.JPG" alt="Achievement">
+              </div>
+              <div class="timeline-text">
+                <span class="timeline-label">Achievement</span>
+                <h3 class="timeline-value" style="font-size: 0.95rem; line-height: 1.4;">NOOR ’25 The Islamic Day of Isipathana College, held on the second of May 2026 Honoured to win a prize English Oratory</h3>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-content timeline-thumb-content">
+              <div class="timeline-thumb">
+                <img src="assets/Achievements/Pilibimbu%202025%20the%20photographic%20day%20of%20ananda%20college%20Arded%201st%20place%20in%20monochrome%20categorey.JPG" alt="Achievement">
+              </div>
+              <div class="timeline-text">
+                <span class="timeline-label">Achievement</span>
+                <h3 class="timeline-value" style="font-size: 0.95rem; line-height: 1.4;">Pilibimbu 2025 the photographic day of ananda college Arded 1st place in monochrome categorey</h3>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-content timeline-thumb-content">
+              <div class="timeline-thumb">
+                <img src="assets/Achievements/Serenity%2024%20the%20islamic%20day%20of%20DS%20senanayaka%20College%20awared%20for%20oaratory.JPG" alt="Achievement">
+              </div>
+              <div class="timeline-text">
+                <span class="timeline-label">Achievement</span>
+                <h3 class="timeline-value" style="font-size: 0.95rem; line-height: 1.4;">Serenity 24 the islamic day of DS senanayaka College awared for oaratory</h3>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-content timeline-thumb-content">
+              <div class="timeline-thumb">
+                <img src="assets/Achievements/Successfully%20completed%20the%20ILT%20examination%20and%20proud%20to%20be%20recognized%20as%20an%20ILT%20Graduate.JPG" alt="Achievement">
+              </div>
+              <div class="timeline-text">
+                <span class="timeline-label">Achievement</span>
+                <h3 class="timeline-value" style="font-size: 0.95rem; line-height: 1.4;">Successfully completed the ILT examination and proud to be recognized as an ILT Graduate</h3>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-content timeline-thumb-content">
+              <div class="timeline-thumb">
+                <img src="assets/Achievements/Top%20performing%20leo%20of%20leo%20disrict%20306%20d7.JPG" alt="Achievement">
+              </div>
+              <div class="timeline-text">
+                <span class="timeline-label">Achievement</span>
+                <h3 class="timeline-value" style="font-size: 0.95rem; line-height: 1.4;">Top performing leo of leo disrict 306 d7</h3>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-content timeline-thumb-content">
+              <div class="timeline-thumb">
+                <img src="assets/Achievements/VIDASA%2024%20the%20photography%20day%20of%20anula%20vidyalaya%20awarded%20in%20photography.JPG" alt="Achievement">
+              </div>
+              <div class="timeline-text">
+                <span class="timeline-label">Achievement</span>
+                <h3 class="timeline-value" style="font-size: 0.95rem; line-height: 1.4;">VIDASA 24 the photography day of anula vidyalaya awarded in photography</h3>
+              </div>
+            </div>
+          </div>
+        </div>

@@ -34,7 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1B. Continuous Undulating 3D Wireframe Wave Plane
     const waveWidth = 140;
     const waveHeight = 140;
-    const waveSegments = 45;
+    const isMobile = window.innerWidth < 768;
+    const waveSegments = isMobile ? 20 : 45;
     const waveGeo = new THREE.PlaneGeometry(waveWidth, waveHeight, waveSegments, waveSegments);
     const waveMat = new THREE.MeshBasicMaterial({
       color: 0xFFFFFF,
@@ -333,40 +334,65 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalDesc = document.getElementById('modal-desc');
   const modalCredit = document.getElementById('modal-credit');
   const ipNoticeBox = document.getElementById('ip-notice-box');
-  const allPortfolioCards = document.querySelectorAll('.portfolio-card');
+  const allModalTriggers = document.querySelectorAll('.portfolio-card, .modal-trigger');
+  const modalCta = document.getElementById('modal-cta');
 
-  allPortfolioCards.forEach(card => {
+  allModalTriggers.forEach(card => {
     card.addEventListener('click', () => {
       const title = card.getAttribute('data-title') || '';
+      const org = card.getAttribute('data-org') || '';
       const desc = card.getAttribute('data-desc') || '';
       const category = card.getAttribute('data-category') || '';
       const imageSrc = card.getAttribute('data-image') || '';
       const photographer = card.getAttribute('data-photographer');
       const designer = card.getAttribute('data-designer');
+      const isExperience = card.classList.contains('experience-trigger');
+      const isAchievement = card.classList.contains('achievement-trigger');
+      const isTimeline = isExperience || isAchievement;
 
       if (modalImg) modalImg.src = imageSrc;
       if (modalTitle) modalTitle.textContent = title;
-      if (modalDesc) modalDesc.textContent = desc;
+      
+      if (modalDesc) {
+        if (isTimeline && org) {
+          modalDesc.innerHTML = `<strong style="color: #fff; display:block; margin-bottom: 0.5rem;">${org}</strong>${desc}`;
+        } else {
+          modalDesc.textContent = desc;
+        }
+      }
+      
       if (modalCategory) modalCategory.textContent = category.toUpperCase();
 
       const isGraphic = card.classList.contains('graphic-card') || !!designer;
 
       if (modalCredit) {
-        if (photographer) {
-          modalCredit.textContent = `Photographed by: ${photographer}`;
-        } else if (designer) {
-          modalCredit.textContent = `Designed by: ${designer}`;
+        if (isTimeline) {
+          modalCredit.style.display = 'none';
         } else {
-          modalCredit.textContent = `Photographed by Ruhaim Riyaz`;
+          modalCredit.style.display = 'block';
+          if (photographer) {
+            modalCredit.textContent = `Photographed by: ${photographer}`;
+          } else if (designer) {
+            modalCredit.textContent = `Designed by: ${designer}`;
+          } else {
+            modalCredit.textContent = `Photographed by Ruhaim Riyaz`;
+          }
         }
       }
 
-      // Copyright IP Protection Notice: Shown EXCLUSIVELY for Photography, HIDDEN for Graphic Design
       if (ipNoticeBox) {
-        if (isGraphic) {
+        if (isGraphic || isTimeline) {
           ipNoticeBox.style.display = 'none';
         } else {
           ipNoticeBox.style.display = 'block';
+        }
+      }
+
+      if (modalCta) {
+        if (isTimeline) {
+          modalCta.style.display = 'none';
+        } else {
+          modalCta.style.display = 'inline-flex';
         }
       }
 
@@ -522,6 +548,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (preloader && preloaderFill) {
     let progress = 0;
+    
+    // Fallback: Force hide preloader after 3 seconds
+    setTimeout(() => {
+      if (!preloader.classList.contains('hidden')) {
+        console.warn('Preloader timeout reached. Force hiding preloader.');
+        preloader.classList.add('hidden');
+        setTimeout(() => {
+          preloader.style.display = 'none';
+        }, 500);
+      }
+    }, 3000);
     const progressInterval = setInterval(() => {
       progress += Math.floor(Math.random() * 12) + 6;
       if (progress >= 100) {
@@ -877,7 +914,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Draw Grid Lines
     ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
     ctx.lineWidth = 1;
-    for (let i = 0; i < 4; i++) {
+    const pCount = isMobile ? Math.floor(4/3) : 4;
+    for (let i = 0; i < pCount; i++) {
       const y = padding + (i * (height - padding * 2)) / 3;
       ctx.beginPath();
       ctx.moveTo(padding, y);

@@ -30,6 +30,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <!-- GSAP Animation Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
@@ -86,7 +87,6 @@
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#experience" class="nav-link">Experience</a></li>
           <li><a href="#achievements" class="nav-link">Achievements</a></li>
-          <li><a href="#featured-projects" class="nav-link">Portfolio</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
@@ -118,7 +118,7 @@
               <span>MEET RUHAIM</span>
               <i data-lucide="user"></i>
             </a>
-            <a href="#featured-projects" class="btn-mono-outline">
+            <a href="#photography-archive" class="btn-mono-outline">
               <span>VIEW PORTFOLIO</span>
               <i data-lucide="layout-grid"></i>
             </a>
@@ -139,8 +139,9 @@
           <!-- 3D Parallax Tilt Card featuring Ruhaim's Portrait -->
           <div class="about-card-3d-wrapper">
             <div class="about-card-3d" id="about-card">
-              <div class="about-img-container">
-                <img src="assets/Ruhaim%20Riyaz/IMG_0425.JPG" alt="Ruhaim Riyaz Portrait" id="avatar-img">
+              <div class="about-img-container layered-depth">
+                <img src="assets/Ruhaim%20Riyaz/IMG_0425.JPG" alt="Ruhaim Riyaz Portrait" class="avatar-primary" id="avatar-img">
+                <img src="assets/Ruhaim%20Riyaz/IMG_2222.jpg" alt="Ruhaim Riyaz Creative" class="avatar-secondary">
                 <div class="about-card-overlay">
                   <h3 class="about-name">Ruhaim Riyaz</h3>
                   <p class="about-role">Creative Professional (Instagram: @ruhaim.jpeg)</p>
@@ -194,142 +195,485 @@
       <!-- =================================================================== -->
       <!-- EXPERIENCE SECTION -->
       <!-- =================================================================== -->
+      
       <section class="section-container" id="experience">
         <div class="section-header">
           <h2 class="section-title monochrome-gradient-text">EXPERIENCE</h2>
           <p class="section-subtitle">My professional and creative involvements in photography, graphic design, and leadership.</p>
         </div>
-        
-        <div class="metrics-grid">
-          <div class="metric-card" style="padding: 2rem;">
-            <div class="metric-icon" style="margin-bottom: 1rem;"><i data-lucide="camera"></i></div>
-            <div class="metric-info">
-              <div class="metric-value" style="font-size: 1.25rem;">Photography Experience</div>
-              <div class="metric-label" style="font-size: 0.9rem; line-height: 1.6; margin-top: 0.5rem;">Extensive coverage of sports, cultural events, and high-luxury weddings. Focus on dynamic motion blur, fine details, and storytelling.</div>
-            </div>
-          </div>
-          <div class="metric-card" style="padding: 2rem;">
-            <div class="metric-icon" style="margin-bottom: 1rem;"><i data-lucide="layout-grid"></i></div>
-            <div class="metric-info">
-              <div class="metric-value" style="font-size: 1.25rem;">Graphic Design Experience</div>
-              <div class="metric-label" style="font-size: 0.9rem; line-height: 1.6; margin-top: 0.5rem;">Created custom event posters, marketing campaigns, and meaningful branding systems. Combining typography, visual balance, and modern aesthetics.</div>
-            </div>
-          </div>
-          <div class="metric-card" style="padding: 2rem;">
-            <div class="metric-icon" style="margin-bottom: 1rem;"><i data-lucide="users"></i></div>
-            <div class="metric-info">
-              <div class="metric-value" style="font-size: 1.25rem;">School & Club Involvement</div>
-              <div class="metric-label" style="font-size: 0.9rem; line-height: 1.6; margin-top: 0.5rem;">Actively participated in school organizations, contributing creative assets, event management, and digital media presence.</div>
-            </div>
-          </div>
-          <div class="metric-card" style="padding: 2rem;">
-            <div class="metric-icon" style="margin-bottom: 1rem;"><i data-lucide="briefcase"></i></div>
-            <div class="metric-info">
-              <div class="metric-value" style="font-size: 1.25rem;">Creative Projects</div>
-              <div class="metric-label" style="font-size: 0.9rem; line-height: 1.6; margin-top: 0.5rem;">Self-initiated fine art photography and conceptual design compositions exploring surrealism, liquid glass aesthetics, and minimalist layouts.</div>
-            </div>
-          </div>
-        </div>
+<div class="career-timeline">
+  <div class="career-timeline-track"></div>
+
+  <div class="career-timeline-item modal-trigger experience-trigger" 
+       data-title="Editor (2025/26)" 
+       data-org="Interact Club of Isipathana College" 
+       data-desc="Appointed as the Editor for the 2025/26 term during the 36th Installation Ceremony." 
+       data-category="LEADERSHIP" 
+       data-image="assets/Experience/Appointed%20as%20the%20editro%20for%20the%20year%202025.26%20in%20the%2036th%20installation%20ceremoney%20of%20intercat%20club%20of%20isiapthana%20college.JPG" 
+       data-type="experience">
+    <div class="career-timeline-node"></div>
+    <div class="career-timeline-content">
+      <span class="career-timeline-category">LEADERSHIP</span>
+      <h3 class="career-timeline-title">Editor (2025/26)</h3>
+      <p class="career-timeline-org">Interact Club of Isipathana College</p>
+      <p class="career-timeline-desc">Appointed as the Editor for the 2025/26 term during the 36th Installation Ceremony.</p>
+    </div>
+    <div class="career-timeline-thumb">
+      <img src="assets/Experience/Appointed%20as%20the%20editro%20for%20the%20year%202025.26%20in%20the%2036th%20installation%20ceremoney%20of%20intercat%20club%20of%20isiapthana%20college.JPG" alt="Editor (2025/26)">
+      <div class="thumb-overlay"><i data-lucide="maximize-2"></i></div>
+    </div>
+  </div>
+
+  <div class="career-timeline-item modal-trigger experience-trigger" 
+       data-title="Keynote Speaker & Graduate" 
+       data-org="Speak Course" 
+       data-desc="Successfully completed the Speak course and delivered a speech to an audience of over 1,000 attendees." 
+       data-category="PUBLIC SPEAKING" 
+       data-image="assets/Experience/Completed%20Speak%20course%20and%20gave%20speech%20for%201000%2B%20people.JPG" 
+       data-type="experience">
+    <div class="career-timeline-node"></div>
+    <div class="career-timeline-content">
+      <span class="career-timeline-category">PUBLIC SPEAKING</span>
+      <h3 class="career-timeline-title">Keynote Speaker & Graduate</h3>
+      <p class="career-timeline-org">Speak Course</p>
+      <p class="career-timeline-desc">Successfully completed the Speak course and delivered a speech to an audience of over 1,000 attendees.</p>
+    </div>
+    <div class="career-timeline-thumb">
+      <img src="assets/Experience/Completed%20Speak%20course%20and%20gave%20speech%20for%201000%2B%20people.JPG" alt="Keynote Speaker & Graduate">
+      <div class="thumb-overlay"><i data-lucide="maximize-2"></i></div>
+    </div>
+  </div>
+
+  <div class="career-timeline-item modal-trigger experience-trigger" 
+       data-title="Official Photographer" 
+       data-org="Isipathana College Rugby" 
+       data-desc="Served as the official sports photographer covering the Isipathana College Rugby season." 
+       data-category="SPORTS PHOTOGRAPHY" 
+       data-image="assets/Experience/Grateful%20to%20have%20been%20the%20official%20photographer%20of%20Isipathana%20College%20Rugby%20throughout%20this%20incredible%20journey..JPG" 
+       data-type="experience">
+    <div class="career-timeline-node"></div>
+    <div class="career-timeline-content">
+      <span class="career-timeline-category">SPORTS PHOTOGRAPHY</span>
+      <h3 class="career-timeline-title">Official Photographer</h3>
+      <p class="career-timeline-org">Isipathana College Rugby</p>
+      <p class="career-timeline-desc">Served as the official sports photographer covering the Isipathana College Rugby season.</p>
+    </div>
+    <div class="career-timeline-thumb">
+      <img src="assets/Experience/Grateful%20to%20have%20been%20the%20official%20photographer%20of%20Isipathana%20College%20Rugby%20throughout%20this%20incredible%20journey..JPG" alt="Official Photographer">
+      <div class="thumb-overlay"><i data-lucide="maximize-2"></i></div>
+    </div>
+  </div>
+
+  <div class="career-timeline-item modal-trigger experience-trigger" 
+       data-title="Editor (2026/27)" 
+       data-org="All Island School Photographers&#39; Association (AISPA)" 
+       data-desc="Appointed as Editor of AISPA for the 2026/27 term, overseeing island-wide school photography publications." 
+       data-category="EDITORIAL" 
+       data-image="assets/Experience/Honored%20to%20be%20appointed%20as%20the%20Editor%20of%20the%20All%20Island%20School%20Photographers&#39;%20Association%20-%20AISPA%20for%20the%20year%20202627%20(2).JPEG" 
+       data-type="experience">
+    <div class="career-timeline-node"></div>
+    <div class="career-timeline-content">
+      <span class="career-timeline-category">EDITORIAL</span>
+      <h3 class="career-timeline-title">Editor (2026/27)</h3>
+      <p class="career-timeline-org">All Island School Photographers' Association (AISPA)</p>
+      <p class="career-timeline-desc">Appointed as Editor of AISPA for the 2026/27 term, overseeing island-wide school photography publications.</p>
+    </div>
+    <div class="career-timeline-thumb">
+      <img src="assets/Experience/Honored%20to%20be%20appointed%20as%20the%20Editor%20of%20the%20All%20Island%20School%20Photographers'%20Association%20-%20AISPA%20for%20the%20year%20202627%20(2).JPEG" alt="Editor (2026/27)">
+      <div class="thumb-overlay"><i data-lucide="maximize-2"></i></div>
+    </div>
+  </div>
+
+  <div class="career-timeline-item modal-trigger experience-trigger" 
+       data-title="AISPA Installation Delegate" 
+       data-org="All Island School Photographers&#39; Association (AISPA)" 
+       data-desc="Attended the official installation ceremony representing the editorial board for 2026/27." 
+       data-category="EVENT" 
+       data-image="assets/Experience/Honored%20to%20be%20appointed%20as%20the%20Editor%20of%20the%20All%20Island%20School%20Photographers&#39;%20Association%20-%20AISPA%20for%20the%20year%20202627.%20(1).JPEG" 
+       data-type="experience">
+    <div class="career-timeline-node"></div>
+    <div class="career-timeline-content">
+      <span class="career-timeline-category">EVENT</span>
+      <h3 class="career-timeline-title">AISPA Installation Delegate</h3>
+      <p class="career-timeline-org">All Island School Photographers' Association (AISPA)</p>
+      <p class="career-timeline-desc">Attended the official installation ceremony representing the editorial board for 2026/27.</p>
+    </div>
+    <div class="career-timeline-thumb">
+      <img src="assets/Experience/Honored%20to%20be%20appointed%20as%20the%20Editor%20of%20the%20All%20Island%20School%20Photographers'%20Association%20-%20AISPA%20for%20the%20year%20202627.%20(1).JPEG" alt="AISPA Installation Delegate">
+      <div class="thumb-overlay"><i data-lucide="maximize-2"></i></div>
+    </div>
+  </div>
+
+  <div class="career-timeline-item modal-trigger experience-trigger" 
+       data-title="AISPA Executive Board" 
+       data-org="All Island School Photographers&#39; Association (AISPA)" 
+       data-desc="Official appointment ceremony for the All Island School Photographers&#39; Association Executive Board." 
+       data-category="LEADERSHIP" 
+       data-image="assets/Experience/Honored%20to%20be%20appointed%20as%20the%20Editor%20of%20the%20All%20Island%20School%20Photographers&#39;%20Association%20-%20AISPA%20for%20the%20year%20202627.JPEG" 
+       data-type="experience">
+    <div class="career-timeline-node"></div>
+    <div class="career-timeline-content">
+      <span class="career-timeline-category">LEADERSHIP</span>
+      <h3 class="career-timeline-title">AISPA Executive Board</h3>
+      <p class="career-timeline-org">All Island School Photographers' Association (AISPA)</p>
+      <p class="career-timeline-desc">Official appointment ceremony for the All Island School Photographers' Association Executive Board.</p>
+    </div>
+    <div class="career-timeline-thumb">
+      <img src="assets/Experience/Honored%20to%20be%20appointed%20as%20the%20Editor%20of%20the%20All%20Island%20School%20Photographers'%20Association%20-%20AISPA%20for%20the%20year%20202627.JPEG" alt="AISPA Executive Board">
+      <div class="thumb-overlay"><i data-lucide="maximize-2"></i></div>
+    </div>
+  </div>
+
+  <div class="career-timeline-item modal-trigger experience-trigger" 
+       data-title="Chief Editor (2025/26)" 
+       data-org="Isipathana College Science Society" 
+       data-desc="Concluded tenure as Chief Editor during the 3rd AISSA Installation Ceremony." 
+       data-category="LEADERSHIP" 
+       data-image="assets/Experience/Honoured%20to%20have%20attended%20the%203rd%20AISSA%20Installation%20Ceremony%2C%20marking%20my%20final%20official%20event%20as%20the%20Chief%20Editor%20of%20the%20Isipathana%20College%20Science%20Society%20for%20the%20Year%20202526..JPG" 
+       data-type="experience">
+    <div class="career-timeline-node"></div>
+    <div class="career-timeline-content">
+      <span class="career-timeline-category">LEADERSHIP</span>
+      <h3 class="career-timeline-title">Chief Editor (2025/26)</h3>
+      <p class="career-timeline-org">Isipathana College Science Society</p>
+      <p class="career-timeline-desc">Concluded tenure as Chief Editor during the 3rd AISSA Installation Ceremony.</p>
+    </div>
+    <div class="career-timeline-thumb">
+      <img src="assets/Experience/Honoured%20to%20have%20attended%20the%203rd%20AISSA%20Installation%20Ceremony%2C%20marking%20my%20final%20official%20event%20as%20the%20Chief%20Editor%20of%20the%20Isipathana%20College%20Science%20Society%20for%20the%20Year%20202526..JPG" alt="Chief Editor (2025/26)">
+      <div class="thumb-overlay"><i data-lucide="maximize-2"></i></div>
+    </div>
+  </div>
+
+  <div class="career-timeline-item modal-trigger experience-trigger" 
+       data-title="Official Delegate & Photographer" 
+       data-org="Mahanama College" 
+       data-desc="Represented as an official delegate and covered photography for the Installation Ceremony." 
+       data-category="EVENT PHOTOGRAPHY" 
+       data-image="assets/Experience/The%20installation%20ceremoney%20of%20mahanama%20college.JPG" 
+       data-type="experience">
+    <div class="career-timeline-node"></div>
+    <div class="career-timeline-content">
+      <span class="career-timeline-category">EVENT PHOTOGRAPHY</span>
+      <h3 class="career-timeline-title">Official Delegate & Photographer</h3>
+      <p class="career-timeline-org">Mahanama College</p>
+      <p class="career-timeline-desc">Represented as an official delegate and covered photography for the Installation Ceremony.</p>
+    </div>
+    <div class="career-timeline-thumb">
+      <img src="assets/Experience/The%20installation%20ceremoney%20of%20mahanama%20college.JPG" alt="Official Delegate & Photographer">
+      <div class="thumb-overlay"><i data-lucide="maximize-2"></i></div>
+    </div>
+  </div>
+
+  <div class="career-timeline-item modal-trigger experience-trigger" 
+       data-title="Official Delegate & Photographer" 
+       data-org="St. John&#39;s College Nugegoda" 
+       data-desc="Participated as a delegate and event photographer for the installation ceremony." 
+       data-category="EVENT PHOTOGRAPHY" 
+       data-image="assets/Experience/the%20installation%20ceremoney%20of%20st.johns%20college%20nugegoda.JPG" 
+       data-type="experience">
+    <div class="career-timeline-node"></div>
+    <div class="career-timeline-content">
+      <span class="career-timeline-category">EVENT PHOTOGRAPHY</span>
+      <h3 class="career-timeline-title">Official Delegate & Photographer</h3>
+      <p class="career-timeline-org">St. John's College Nugegoda</p>
+      <p class="career-timeline-desc">Participated as a delegate and event photographer for the installation ceremony.</p>
+    </div>
+    <div class="career-timeline-thumb">
+      <img src="assets/Experience/the%20installation%20ceremoney%20of%20st.johns%20college%20nugegoda.JPG" alt="Official Delegate & Photographer">
+      <div class="thumb-overlay"><i data-lucide="maximize-2"></i></div>
+    </div>
+  </div>
+</div>
       </section>
 
+
+
       <!-- =================================================================== -->
-      <!-- ACHIEVEMENTS SECTION (TIMELINE) -->
+      <!-- ACHIEVEMENTS SECTION -->
       <!-- =================================================================== -->
       <section class="section-container" id="achievements">
         <div class="section-header">
           <h2 class="section-title monochrome-gradient-text">ACHIEVEMENTS</h2>
-          <p class="section-subtitle">Awards, milestones, appointments, and leadership positions.</p>
+          <p class="section-subtitle">Prestigious awards and milestones reflecting my dedication to creative and leadership excellence.</p>
         </div>
+<div class="prestigious-achievements-grid">
 
-        <div style="display: flex; flex-direction: column; gap: 1.5rem; max-width: 900px; margin: 0 auto; position: relative;">
-          <!-- Vertical Line -->
-          <div style="position: absolute; left: 24px; top: 0; bottom: 0; width: 2px; background: var(--border-liquid); z-index: 0;"></div>
-          
-          <div class="detail-item" style="position: relative; z-index: 1; padding-left: 4.5rem;">
-            <div style="position: absolute; left: 14px; top: 1.5rem; width: 22px; height: 22px; border-radius: 50%; background: var(--bg-dark); border: 2px solid var(--border-liquid-bright); display: flex; align-items: center; justify-content: center; box-shadow: var(--liquid-rim-glow);"><div class="pulse-dot"></div></div>
-            <span class="detail-label">Major Milestone</span>
-            <span class="detail-value" style="font-size: 1.1rem;">Official Photographer for Isipathana College Rugby</span>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Providing high-quality sports and action coverage for major tournaments.</p>
-          </div>
+  <div class="achievement-plaque modal-trigger achievement-trigger" 
+       data-title="Appreciation Award – Chief Editor" 
+       data-org="Isipathana College Science Society (ENIGMA &#39;25)" 
+       data-desc="Received in recognition of outstanding leadership and dedicated service as a Top Board Member." 
+       data-category="LEADERSHIP AWARD" 
+       data-image="assets/Achievements/Apprecitaion%20awrd%20for%20being%20a%20excutive%20commitie%20in%20the%20scince%20socity%20of%20isipathana%20college%20(1).JPG" 
+       data-type="achievement">
+    <div class="plaque-image">
+      <img src="assets/Achievements/Apprecitaion%20awrd%20for%20being%20a%20excutive%20commitie%20in%20the%20scince%20socity%20of%20isipathana%20college%20(1).JPG" alt="Appreciation Award – Chief Editor">
+      <div class="plaque-overlay"><i data-lucide="award"></i> View Details</div>
+    </div>
+    <div class="plaque-content">
+      <span class="plaque-category">LEADERSHIP AWARD</span>
+      <h3 class="plaque-title">Appreciation Award – Chief Editor</h3>
+      <p class="plaque-org">Isipathana College Science Society (ENIGMA '25)</p>
+    </div>
+  </div>
 
-          <div class="detail-item" style="position: relative; z-index: 1; padding-left: 4.5rem;">
-            <div style="position: absolute; left: 14px; top: 1.5rem; width: 22px; height: 22px; border-radius: 50%; background: var(--bg-dark); border: 2px solid var(--border-liquid); display: flex; align-items: center; justify-content: center;"></div>
-            <span class="detail-label">Award & Competition</span>
-            <span class="detail-value" style="font-size: 1.1rem;">Creative Photography Excellence</span>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Recognized for exceptional dynamic motion blur and fine art portraiture.</p>
-          </div>
+  <div class="achievement-plaque modal-trigger achievement-trigger" 
+       data-title="Multiple Awards – Mobile Photography" 
+       data-org="Photographic Art Society, Dharmapala Vidyalaya (DAMPAL Seya 2025)" 
+       data-desc="Won multiple photography awards including the Mobile Photography category at DAMPAL Seya 2025." 
+       data-category="PHOTOGRAPHY AWARD" 
+       data-image="assets/Achievements/DAMPAL%20Seya%202025%20the%20photography%20day%20of%20dharmapala%20vidayalayta%20awrded%20for%20photography.JPG" 
+       data-type="achievement">
+    <div class="plaque-image">
+      <img src="assets/Achievements/DAMPAL%20Seya%202025%20the%20photography%20day%20of%20dharmapala%20vidayalayta%20awrded%20for%20photography.JPG" alt="Multiple Awards – Mobile Photography">
+      <div class="plaque-overlay"><i data-lucide="award"></i> View Details</div>
+    </div>
+    <div class="plaque-content">
+      <span class="plaque-category">PHOTOGRAPHY AWARD</span>
+      <h3 class="plaque-title">Multiple Awards – Mobile Photography</h3>
+      <p class="plaque-org">Photographic Art Society, Dharmapala Vidyalaya (DAMPAL Seya 2025)</p>
+    </div>
+  </div>
 
-          <div class="detail-item" style="position: relative; z-index: 1; padding-left: 4.5rem;">
-            <div style="position: absolute; left: 14px; top: 1.5rem; width: 22px; height: 22px; border-radius: 50%; background: var(--bg-dark); border: 2px solid var(--border-liquid); display: flex; align-items: center; justify-content: center;"></div>
-            <span class="detail-label">Leadership</span>
-            <span class="detail-value" style="font-size: 1.1rem;">Design Lead for Club Marketing Campaigns</span>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Directed branding, promotional graphics, and social media aesthetic for several successful school events.</p>
-          </div>
+  <div class="achievement-plaque modal-trigger achievement-trigger" 
+       data-title="3rd Place – Monochrome Category" 
+       data-org="Mahanama Girls College Kandy (ECLAT &#39;24)" 
+       data-desc="Secured 3rd place in the Monochrome photography category at the ECLAT &#39;24 photography day." 
+       data-category="PHOTOGRAPHY AWARD" 
+       data-image="assets/Achievements/Eclat%2024%20the%20photography%20day%20mahanam%20girls%20college%20kandy%20awarded%20for%20photography.JPG" 
+       data-type="achievement">
+    <div class="plaque-image">
+      <img src="assets/Achievements/Eclat%2024%20the%20photography%20day%20mahanam%20girls%20college%20kandy%20awarded%20for%20photography.JPG" alt="3rd Place – Monochrome Category">
+      <div class="plaque-overlay"><i data-lucide="award"></i> View Details</div>
+    </div>
+    <div class="plaque-content">
+      <span class="plaque-category">PHOTOGRAPHY AWARD</span>
+      <h3 class="plaque-title">3rd Place – Monochrome Category</h3>
+      <p class="plaque-org">Mahanama Girls College Kandy (ECLAT '24)</p>
+    </div>
+  </div>
 
-          <div class="detail-item" style="position: relative; z-index: 1; padding-left: 4.5rem;">
-            <div style="position: absolute; left: 14px; top: 1.5rem; width: 22px; height: 22px; border-radius: 50%; background: var(--bg-dark); border: 2px solid var(--border-liquid); display: flex; align-items: center; justify-content: center;"></div>
-            <span class="detail-label">Certification</span>
-            <span class="detail-value" style="font-size: 1.1rem;">Digital Visual Arts & Graphic Design</span>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Professional certification in advanced graphic composition and visual storytelling.</p>
-          </div>
-        </div>
+  <div class="achievement-plaque modal-trigger achievement-trigger" 
+       data-title="Award in Photography" 
+       data-org="Zahira College (EXPOZIA &#39;25 Media Day)" 
+       data-desc="Awarded in the photography category at the EXPOZIA &#39;25 Media Day." 
+       data-category="PHOTOGRAPHY AWARD" 
+       data-image="assets/Achievements/Expozia%2024%20the%20media%20day%20of%20zahira%20college%20awarded%20in%20photography%20cateogry.JPG" 
+       data-type="achievement">
+    <div class="plaque-image">
+      <img src="assets/Achievements/Expozia%2024%20the%20media%20day%20of%20zahira%20college%20awarded%20in%20photography%20cateogry.JPG" alt="Award in Photography">
+      <div class="plaque-overlay"><i data-lucide="award"></i> View Details</div>
+    </div>
+    <div class="plaque-content">
+      <span class="plaque-category">PHOTOGRAPHY AWARD</span>
+      <h3 class="plaque-title">Award in Photography</h3>
+      <p class="plaque-org">Zahira College (EXPOZIA '25 Media Day)</p>
+    </div>
+  </div>
+
+  <div class="achievement-plaque modal-trigger achievement-trigger" 
+       data-title="Media & Photography Award" 
+       data-org="Gothami Balika Vidyalaya (HEESARA 2024)" 
+       data-desc="Recognized for media and photography excellence at HEESARA 2024 All Island Bilingual Media Competition." 
+       data-category="MEDIA AWARD" 
+       data-image="assets/Achievements/HE%20SARA%2024%20the%20media%20day%20competition%20of%20gothami%20balika%20vidayalaya%20awarded%20in%20photography.JPG" 
+       data-type="achievement">
+    <div class="plaque-image">
+      <img src="assets/Achievements/HE%20SARA%2024%20the%20media%20day%20competition%20of%20gothami%20balika%20vidayalaya%20awarded%20in%20photography.JPG" alt="Media & Photography Award">
+      <div class="plaque-overlay"><i data-lucide="award"></i> View Details</div>
+    </div>
+    <div class="plaque-content">
+      <span class="plaque-category">MEDIA AWARD</span>
+      <h3 class="plaque-title">Media & Photography Award</h3>
+      <p class="plaque-org">Gothami Balika Vidyalaya (HEESARA 2024)</p>
+    </div>
+  </div>
+
+  <div class="achievement-plaque modal-trigger achievement-trigger" 
+       data-title="President&#39;s Appreciation Award" 
+       data-org="Leo District 306 D7 (Invictus Inaugural District Conference)" 
+       data-desc="Honored to receive the District Appreciation Award for dedicated service and recognition as a Leo." 
+       data-category="LEADERSHIP AWARD" 
+       data-image="assets/Achievements/Honored%20to%20receive%20the%20District%20Appreciation%20Award%20at%20the%20Invictus%20Inaugural%20District%20Conference%20of%20Leo%20District%20306%20D7.%20Grateful%20for%20the%20recognition%20and%20inspired%20to%20continue%20serving%20with%20dedicat.JPG" 
+       data-type="achievement">
+    <div class="plaque-image">
+      <img src="assets/Achievements/Honored%20to%20receive%20the%20District%20Appreciation%20Award%20at%20the%20Invictus%20Inaugural%20District%20Conference%20of%20Leo%20District%20306%20D7.%20Grateful%20for%20the%20recognition%20and%20inspired%20to%20continue%20serving%20with%20dedicat.JPG" alt="President&#39;s Appreciation Award">
+      <div class="plaque-overlay"><i data-lucide="award"></i> View Details</div>
+    </div>
+    <div class="plaque-content">
+      <span class="plaque-category">LEADERSHIP AWARD</span>
+      <h3 class="plaque-title">President's Appreciation Award</h3>
+      <p class="plaque-org">Leo District 306 D7 (Invictus Inaugural District Conference)</p>
+    </div>
+  </div>
+
+  <div class="achievement-plaque modal-trigger achievement-trigger" 
+       data-title="2nd Place & Merit Award" 
+       data-org="Sirimavo Bandaranaike Vidyalaya (Kirana &#39;25)" 
+       data-desc="Secured 2nd place and a Merit award across photography categories at Kirana &#39;25." 
+       data-category="PHOTOGRAPHY AWARD" 
+       data-image="assets/Achievements/Kiriana%2025%20the%20photographic%20day%20of%20sirimavo%20banadaranayaka%20vidayalaya%20awrded%20for%20mbile%20cateogry%20(1).JPG" 
+       data-type="achievement">
+    <div class="plaque-image">
+      <img src="assets/Achievements/Kiriana%2025%20the%20photographic%20day%20of%20sirimavo%20banadaranayaka%20vidayalaya%20awrded%20for%20mbile%20cateogry%20(1).JPG" alt="2nd Place & Merit Award">
+      <div class="plaque-overlay"><i data-lucide="award"></i> View Details</div>
+    </div>
+    <div class="plaque-content">
+      <span class="plaque-category">PHOTOGRAPHY AWARD</span>
+      <h3 class="plaque-title">2nd Place & Merit Award</h3>
+      <p class="plaque-org">Sirimavo Bandaranaike Vidyalaya (Kirana '25)</p>
+    </div>
+  </div>
+
+  <div class="achievement-plaque modal-trigger achievement-trigger" 
+       data-title="Photography Excellence Award" 
+       data-org="All Island School Photographers&#39; Association (LOOM LENS &#39;25)" 
+       data-desc="Awarded for photography excellence at the all-island photography competition." 
+       data-category="PHOTOGRAPHY AWARD" 
+       data-image="assets/Achievements/LOOM%20LENS%2025%20the%20all%20island%20photography%20competitin%20organised%20by%20the%20all%20isand%20photography%20association%20won%20prize%20in%20photography.JPG" 
+       data-type="achievement">
+    <div class="plaque-image">
+      <img src="assets/Achievements/LOOM%20LENS%2025%20the%20all%20island%20photography%20competitin%20organised%20by%20the%20all%20isand%20photography%20association%20won%20prize%20in%20photography.JPG" alt="Photography Excellence Award">
+      <div class="plaque-overlay"><i data-lucide="award"></i> View Details</div>
+    </div>
+    <div class="plaque-content">
+      <span class="plaque-category">PHOTOGRAPHY AWARD</span>
+      <h3 class="plaque-title">Photography Excellence Award</h3>
+      <p class="plaque-org">All Island School Photographers' Association (LOOM LENS '25)</p>
+    </div>
+  </div>
+
+  <div class="achievement-plaque modal-trigger achievement-trigger" 
+       data-title="1st Place – Graphic Design & 2nd Place – Photography" 
+       data-org="Isipathana College Media Unit (NETHINETHARA Media Day)" 
+       data-desc="Secured 1st place in Graphic Design and 2nd place in Monochrome & Street Photography categories." 
+       data-category="DESIGN & PHOTOGRAPHY" 
+       data-image="assets/Achievements/NETHINETHARA%20The%20Media%20Day%20of%20Isipathana%20College%2C%20held%20on%20the%20fifth%20of%20May.%20Proud%20to%20secure%201st%20place%20in%20Graphic%20Design%20and%202nd%20place%20in%20Photography%20(Monochrome%20%26%20Street%20categories)..JPG" 
+       data-type="achievement">
+    <div class="plaque-image">
+      <img src="assets/Achievements/NETHINETHARA%20The%20Media%20Day%20of%20Isipathana%20College%2C%20held%20on%20the%20fifth%20of%20May.%20Proud%20to%20secure%201st%20place%20in%20Graphic%20Design%20and%202nd%20place%20in%20Photography%20(Monochrome%20%26%20Street%20categories)..JPG" alt="1st Place – Graphic Design & 2nd Place – Photography">
+      <div class="plaque-overlay"><i data-lucide="award"></i> View Details</div>
+    </div>
+    <div class="plaque-content">
+      <span class="plaque-category">DESIGN & PHOTOGRAPHY</span>
+      <h3 class="plaque-title">1st Place – Graphic Design & 2nd Place – Photography</h3>
+      <p class="plaque-org">Isipathana College Media Unit (NETHINETHARA Media Day)</p>
+    </div>
+  </div>
+
+  <div class="achievement-plaque modal-trigger achievement-trigger" 
+       data-title="Prize in English Oratory" 
+       data-org="Isipathana College Islamic Society (NOOR &#39;25 Islamic Day)" 
+       data-desc="Honored to win a prize in English Oratory at NOOR &#39;25." 
+       data-category="PUBLIC SPEAKING" 
+       data-image="assets/Achievements/NOOR%20%E2%80%9925%20The%20Islamic%20Day%20of%20Isipathana%20College%2C%20held%20on%20the%20second%20of%20May%202026%20Honoured%20to%20win%20a%20prize%20English%20Oratory.JPG" 
+       data-type="achievement">
+    <div class="plaque-image">
+      <img src="assets/Achievements/NOOR%20%E2%80%9925%20The%20Islamic%20Day%20of%20Isipathana%20College%2C%20held%20on%20the%20second%20of%20May%202026%20Honoured%20to%20win%20a%20prize%20English%20Oratory.JPG" alt="Prize in English Oratory">
+      <div class="plaque-overlay"><i data-lucide="award"></i> View Details</div>
+    </div>
+    <div class="plaque-content">
+      <span class="plaque-category">PUBLIC SPEAKING</span>
+      <h3 class="plaque-title">Prize in English Oratory</h3>
+      <p class="plaque-org">Isipathana College Islamic Society (NOOR '25 Islamic Day)</p>
+    </div>
+  </div>
+
+  <div class="achievement-plaque modal-trigger achievement-trigger" 
+       data-title="1st Place – Monochrome (Inter-School)" 
+       data-org="Ananda College Photographic Art Society (Pilibimbu 2025)" 
+       data-desc="Awarded 1st place in the Inter-School Monochrome category." 
+       data-category="PHOTOGRAPHY AWARD" 
+       data-image="assets/Achievements/Pilibimbu%202025%20the%20photographic%20day%20of%20ananda%20college%20Arded%201st%20place%20in%20monochrome%20categorey.JPG" 
+       data-type="achievement">
+    <div class="plaque-image">
+      <img src="assets/Achievements/Pilibimbu%202025%20the%20photographic%20day%20of%20ananda%20college%20Arded%201st%20place%20in%20monochrome%20categorey.JPG" alt="1st Place – Monochrome (Inter-School)">
+      <div class="plaque-overlay"><i data-lucide="award"></i> View Details</div>
+    </div>
+    <div class="plaque-content">
+      <span class="plaque-category">PHOTOGRAPHY AWARD</span>
+      <h3 class="plaque-title">1st Place – Monochrome (Inter-School)</h3>
+      <p class="plaque-org">Ananda College Photographic Art Society (Pilibimbu 2025)</p>
+    </div>
+  </div>
+
+  <div class="achievement-plaque modal-trigger achievement-trigger" 
+       data-title="Photography Award" 
+       data-org="Photography Society of D.S. Senanayake College (Serenity &#39;24)" 
+       data-desc="Awarded at Serenity &#39;24 organized by the Photography Society of D.S. Senanayake College." 
+       data-category="PHOTOGRAPHY AWARD" 
+       data-image="assets/Achievements/Serenity%2024%20the%20islamic%20day%20of%20DS%20senanayaka%20College%20awared%20for%20oaratory.JPG" 
+       data-type="achievement">
+    <div class="plaque-image">
+      <img src="assets/Achievements/Serenity%2024%20the%20islamic%20day%20of%20DS%20senanayaka%20College%20awared%20for%20oaratory.JPG" alt="Photography Award">
+      <div class="plaque-overlay"><i data-lucide="award"></i> View Details</div>
+    </div>
+    <div class="plaque-content">
+      <span class="plaque-category">PHOTOGRAPHY AWARD</span>
+      <h3 class="plaque-title">Photography Award</h3>
+      <p class="plaque-org">Photography Society of D.S. Senanayake College (Serenity '24)</p>
+    </div>
+  </div>
+
+  <div class="achievement-plaque modal-trigger achievement-trigger" 
+       data-title="ILT Graduate" 
+       data-org="ILT Examination" 
+       data-desc="Successfully completed the ILT examination and officially recognized as a graduate." 
+       data-category="CERTIFICATION" 
+       data-image="assets/Achievements/Successfully%20completed%20the%20ILT%20examination%20and%20proud%20to%20be%20recognized%20as%20an%20ILT%20Graduate.JPG" 
+       data-type="achievement">
+    <div class="plaque-image">
+      <img src="assets/Achievements/Successfully%20completed%20the%20ILT%20examination%20and%20proud%20to%20be%20recognized%20as%20an%20ILT%20Graduate.JPG" alt="ILT Graduate">
+      <div class="plaque-overlay"><i data-lucide="award"></i> View Details</div>
+    </div>
+    <div class="plaque-content">
+      <span class="plaque-category">CERTIFICATION</span>
+      <h3 class="plaque-title">ILT Graduate</h3>
+      <p class="plaque-org">ILT Examination</p>
+    </div>
+  </div>
+
+  <div class="achievement-plaque modal-trigger achievement-trigger" 
+       data-title="Top Performing Leo" 
+       data-org="Leo District 306 D7" 
+       data-desc="Recognized as a Top Performing Leo for outstanding dedication and service in Leo District 306 D7." 
+       data-category="LEADERSHIP AWARD" 
+       data-image="assets/Achievements/Top%20performing%20leo%20of%20leo%20disrict%20306%20d7.JPG" 
+       data-type="achievement">
+    <div class="plaque-image">
+      <img src="assets/Achievements/Top%20performing%20leo%20of%20leo%20disrict%20306%20d7.JPG" alt="Top Performing Leo">
+      <div class="plaque-overlay"><i data-lucide="award"></i> View Details</div>
+    </div>
+    <div class="plaque-content">
+      <span class="plaque-category">LEADERSHIP AWARD</span>
+      <h3 class="plaque-title">Top Performing Leo</h3>
+      <p class="plaque-org">Leo District 306 D7</p>
+    </div>
+  </div>
+
+  <div class="achievement-plaque modal-trigger achievement-trigger" 
+       data-title="Merit Award – Photography" 
+       data-org="Anula Vidyalaya (VIDASA &#39;24)" 
+       data-desc="Received a Merit Award at the VIDASA &#39;24 photography day exhibition." 
+       data-category="PHOTOGRAPHY AWARD" 
+       data-image="assets/Achievements/VIDASA%2024%20the%20photography%20day%20of%20anula%20vidyalaya%20awarded%20in%20photography.JPG" 
+       data-type="achievement">
+    <div class="plaque-image">
+      <img src="assets/Achievements/VIDASA%2024%20the%20photography%20day%20of%20anula%20vidyalaya%20awarded%20in%20photography.JPG" alt="Merit Award – Photography">
+      <div class="plaque-overlay"><i data-lucide="award"></i> View Details</div>
+    </div>
+    <div class="plaque-content">
+      <span class="plaque-category">PHOTOGRAPHY AWARD</span>
+      <h3 class="plaque-title">Merit Award – Photography</h3>
+      <p class="plaque-org">Anula Vidyalaya (VIDASA '24)</p>
+    </div>
+  </div>
+</div>
       </section>
 
-      <!-- =================================================================== -->
+
+
       <!-- FEATURED PROJECTS SECTION -->
-      <!-- =================================================================== -->
-      <section class="section-container" id="featured-projects">
-        <div class="section-header">
-          <h2 class="section-title monochrome-gradient-text">FEATURED PROJECTS</h2>
-          <p class="section-subtitle">A curated selection of my best work across photography and graphic design.</p>
-        </div>
-
-        <div class="portfolio-grid">
-          <!-- Featured 1: Photo -->
-          <div class="portfolio-card photo-card" data-category="cultural" data-desc="Ethereal long exposure light trails of traditional dancers in motion." data-image="assets/Photographs/IMG_2183.jpg" data-photographer="Ruhaim Riyaz">
-            <div class="card-media-wrapper">
-              <img src="assets/Photographs/IMG_2183.jpg" alt="Photographed by Ruhaim Riyaz">
-            </div>
-            <div class="card-content-overlay" style="opacity: 0.95;">
-              <span class="card-category-badge">PHOTOGRAPHY</span>
-              <h3 class="card-title">Cultural Motion</h3>
-            </div>
-          </div>
-
-          <!-- Featured 2: Graphic -->
-          <div class="portfolio-card graphic-card" data-category="posters" data-desc="Official sports and event poster artwork created for Isipathana College." data-image="assets/Graphic%20designs/Isipathana_Ruhaim_Dematagoda.jpg" data-designer="Ruhaim Riyaz">
-            <div class="card-media-wrapper">
-              <img src="assets/Graphic%20designs/Isipathana_Ruhaim_Dematagoda.jpg" alt="Designed by Ruhaim Riyaz">
-            </div>
-            <div class="card-content-overlay" style="opacity: 0.95;">
-              <span class="card-category-badge">GRAPHIC DESIGN</span>
-              <h3 class="card-title">Event Posters</h3>
-            </div>
-          </div>
-
-          <!-- Featured 3: Photo -->
-          <div class="portfolio-card photo-card" data-category="weddings" data-desc="High luxury bridal detail photography showcasing intricate henna hand art, traditional gold jewelry, and embroidered ivory attire." data-image="assets/Photographs/IMG_2184.jpg" data-photographer="Ruhaim Riyaz">
-            <div class="card-media-wrapper">
-              <img src="assets/Photographs/IMG_2184.jpg" alt="Photographed by Ruhaim Riyaz">
-            </div>
-            <div class="card-content-overlay" style="opacity: 0.95;">
-              <span class="card-category-badge">PHOTOGRAPHY</span>
-              <h3 class="card-title">Bridal Details</h3>
-            </div>
-          </div>
-
-          <!-- Featured 4: Graphic -->
-          <div class="portfolio-card graphic-card" data-category="branding" data-desc="Creative brand graphic composition by Ruhaim Riyaz." data-image="assets/Graphic%20designs/Artwork.jpg" data-designer="Ruhaim Riyaz">
-            <div class="card-media-wrapper">
-              <img src="assets/Graphic%20designs/Artwork.jpg" alt="Designed by Ruhaim Riyaz">
-            </div>
-            <div class="card-content-overlay" style="opacity: 0.95;">
-              <span class="card-category-badge">GRAPHIC DESIGN</span>
-              <h3 class="card-title">Brand Composition</h3>
-            </div>
-          </div>
-        </div>
-      </section>
+      <!--
 
       <!-- =================================================================== -->
       <!-- SECTION 1: SEPARATE PHOTOGRAPHY GALLERY (WITHOUT TITLES) -->
